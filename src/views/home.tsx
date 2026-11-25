@@ -7,7 +7,7 @@ import { Button, Card, Notice } from '@/components/ui';
 import { SafeLink, ExternalLink } from '@/components/links';
 import { useStore } from '@/lib/store';
 import { platforms } from '@/lib/content';
-import { href } from '@/lib/utils';
+import { href, go } from '@/lib/utils';
 
 const STAT_SOURCES = [
   'https://arxiv.org/pdf/2501.17805',
@@ -92,7 +92,7 @@ export default function Home() {
               onClick={() => {
                 loadDemo();
                 startTour();
-                router.replace(href(locale, '/'));
+                go(router, href(locale, '/'));
               }}
             >
               {t('home.ctaDemo')}

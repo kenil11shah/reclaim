@@ -9,7 +9,7 @@ import { leaveNow } from './safety';
 import dynamic from 'next/dynamic';
 import { TourCard } from './tour';
 import { useStore } from '@/lib/store';
-import { cn, neutralPath, href } from '@/lib/utils';
+import { cn, neutralPath, href, PREVIEW } from '@/lib/utils';
 import type { Key } from '@/lib/i18n';
 
 const DeleteDialog = dynamic(() => import('./dialogs').then((m) => m.DeleteDialog), { ssr: false });
@@ -107,6 +107,8 @@ export function Shell({ children }: { children: ReactNode }) {
             <Link
               href={href(otherLocale, here) + search}
               replace
+              prefetch={PREVIEW ? false : undefined}
+              onClick={PREVIEW ? (e) => { e.preventDefault(); window.location.replace(href(otherLocale, here) + window.location.search); } : undefined}
               lang={otherLocale}
               className="whitespace-nowrap rounded-lg px-2 py-2 text-sm font-semibold text-brand hover:bg-brand-soft/60"
               data-testid="lang-switch"

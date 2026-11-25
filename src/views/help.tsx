@@ -6,7 +6,7 @@ import { useLocale } from '@/components/locale';
 import { Button, Card } from '@/components/ui';
 import { flow } from '@/lib/content';
 import { useStore } from '@/lib/store';
-import { href, cn } from '@/lib/utils';
+import { href, cn, go } from '@/lib/utils';
 import type { Answers } from '@/lib/schemas';
 
 type Screen = { kind: 'q'; i: number } | { kind: 'danger' } | { kind: 'sextortion' } | { kind: 'review' };
@@ -43,7 +43,7 @@ export default function Help() {
     if (qid === 'safety' && value === 'yes') return setScreen({ kind: 'danger' });
     if (qid === 'about' && value === 'minor') {
       resetAnswers();
-      return router.replace(href(locale, '/under-18/'));
+      return go(router, href(locale, '/under-18/'));
     }
     if (qid === 'threat' && value === 'yes') return setScreen({ kind: 'sextortion' });
     goNext(i);
@@ -172,7 +172,7 @@ export default function Help() {
             <Button variant="secondary" onClick={goBack}>{t('common.back')}</Button>
             <Button size="lg" data-testid="build-plan" onClick={() => {
               const lang = answers.lang === 'hi' || answers.lang === 'en' ? answers.lang : locale;
-              router.replace(href(lang, '/plan/'));
+              go(router, href(lang, '/plan/'));
             }}>
               {t('help.review.build')}
             </Button>

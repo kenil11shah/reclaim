@@ -12,7 +12,7 @@ import { deadlineState, formatDuration, formatHours } from '@/lib/deadline';
 import { formatIST, fromLocalInput, nowIST, toLocalInput } from '@/lib/time';
 import type { Report } from '@/lib/schemas';
 import { reportStatuses } from '@/lib/constants';
-import { cn, href } from '@/lib/utils';
+import { cn, href, go } from '@/lib/utils';
 import type { Key } from '@/lib/i18n';
 
 function useNow(ms = 1000) {
@@ -157,7 +157,7 @@ function CaseInner() {
       {c.demo && (
         <Notice className="mb-6 flex flex-wrap items-center justify-between gap-3">
           <span>{t('case.demoNote')}</span>
-          <Button size="sm" variant="secondary" onClick={() => { endTour(); wipe(); router.replace(href(locale, '/')); }}>{t('case.exitDemo')}</Button>
+          <Button size="sm" variant="secondary" onClick={() => { endTour(); wipe(); go(router, href(locale, '/')); }}>{t('case.exitDemo')}</Button>
         </Notice>
       )}
       <dl className="mb-8 grid grid-cols-3 gap-3">

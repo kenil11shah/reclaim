@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
 import { ExternalLink as ExtIcon } from 'lucide-react';
-import { href } from '@/lib/utils';
+import { href, PREVIEW } from '@/lib/utils';
 import { useLocale } from './locale';
 import { cn } from '@/lib/utils';
 
@@ -13,6 +13,13 @@ import { cn } from '@/lib/utils';
  */
 export function SafeLink({ to, className, children, ...rest }: { to: string; className?: string; children: ReactNode } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>) {
   const { locale } = useLocale();
+  if (PREVIEW) {
+    return (
+      <a href={href(locale, to)} className={className} {...rest} onClick={(e) => { e.preventDefault(); window.location.replace(href(locale, to)); }}>
+        {children}
+      </a>
+    );
+  }
   return (
     <Link href={href(locale, to)} replace scroll className={className} {...rest}>
       {children}

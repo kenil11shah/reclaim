@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useStore } from '@/lib/store';
-import { href, neutralPath } from '@/lib/utils';
+import { href, neutralPath, go as navigate } from '@/lib/utils';
 import { useLocale } from './locale';
 import { Button } from './ui';
 import type { Key } from '@/lib/i18n';
@@ -40,7 +40,7 @@ export function TourCard() {
   if (!tour.active || !step) return null;
   const go = (n: number) => {
     setStep(n);
-    router.replace(href(locale, TOUR[n].route));
+    navigate(router, href(locale, TOUR[n].route));
   };
   const onRoute = neutralPath(pathname) === step.route.split('?')[0];
   const last = tour.step === TOUR.length - 1;
@@ -65,7 +65,7 @@ export function TourCard() {
         )}
         <span className="flex-1" />
         <Button size="sm" variant="ghost" className="px-2 text-[13px]" onClick={() => { loadDemo(); go(0); }}>{t('tour.reset')}</Button>
-        <Button size="sm" variant="ghost" className="px-2 text-[13px]" data-testid="tour-exit" onClick={() => { endTour(); wipe(); router.replace(href(locale, '/')); }}>{t('tour.exit')}</Button>
+        <Button size="sm" variant="ghost" className="px-2 text-[13px]" data-testid="tour-exit" onClick={() => { endTour(); wipe(); navigate(router, href(locale, '/')); }}>{t('tour.exit')}</Button>
       </div>
     </section>
   );

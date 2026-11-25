@@ -8,7 +8,7 @@ import { SafeLink } from '@/components/links';
 import { PinGate } from '@/components/pin-gate';
 import { useStore } from '@/lib/store';
 import { buildPlan, isBlocked } from '@/lib/plan';
-import { href, cn } from '@/lib/utils';
+import { href, cn, go } from '@/lib/utils';
 
 export default function Plan() {
   const { t, locale } = useLocale();
@@ -25,7 +25,7 @@ export default function Plan() {
   const hasAnswers = Boolean(effective.about || effective.what?.length || effective.where?.length || effective.safety);
 
   useEffect(() => {
-    if (hydrated && isBlocked(effective) === 'minor') router.replace(href(locale, '/under-18/'));
+    if (hydrated && isBlocked(effective) === 'minor') go(router, href(locale, '/under-18/'));
   }, [hydrated, effective, locale, router]);
 
   if (!hydrated) return <p className="text-muted">{t('common.loading')}</p>;
