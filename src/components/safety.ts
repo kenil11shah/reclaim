@@ -4,7 +4,7 @@ export const NEUTRAL_SITE = 'https://www.google.com/search?q=weather';
 /** Quick exit: blank the page and replace this history entry with a neutral site. */
 export function leaveNow() {
   try {
-    sessionStorage.removeItem('reclaim:unlocked');
+    for (const k of Object.keys(sessionStorage)) if (k.startsWith('reclaim')) sessionStorage.removeItem(k);
   } catch { /* ignore */ }
   try {
     document.title = 'Weather';

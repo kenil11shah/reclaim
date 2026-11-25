@@ -1,5 +1,13 @@
 import { test, expect } from '@playwright/test';
 import { answerHelpFlow, blockNeutralSite } from './helpers';
+import type { Page } from '@playwright/test';
+
+async function navTo(page: Page, name: string) {
+  const desk = page.locator('header nav').first().getByRole('link', { name, exact: true });
+  if (await desk.isVisible()) return desk.click();
+  await page.getByRole('button', { name: 'Menu' }).click();
+  await page.locator('#mobile-nav').getByRole('link', { name, exact: true }).click();
+}
 
 test('help flow builds a plan and saves a case', async ({ page }) => {
   const t0 = Date.now();
@@ -72,9 +80,53 @@ test('a report logged more than 2 hours ago shows Deadline missed', async ({ pag
   await card.getByTestId('reported-at').fill(d);
   await expect(card.getByTestId('overdue')).toBeVisible();
   await expect(card.getByTestId('escalate')).toBeVisible();
+  await page.locator('#new-plat').selectOption('x');
+  await page.getByTestId('add-report').click();
+  const card2 = page.getByTestId('report-x');
   const now = new Date(Date.now() + 5.5 * 3600_000).toISOString().slice(0, 16);
-  await card.getByTestId('reported-at').fill(now);
-  await expect(card.getByTestId('countdown')).toContainText(/0[01]:\d\d:\d\d/);
+  await card2.getByTestId('reported-at').fill(now);
+  await expect(card2.getByTestId('countdown')).toContainText(/0[01]:\d\d:\d\d/);
+});
+
+test('report cards can be edited until the 2-hour timer starts, then lock', async ({ page }) => {
+  await page.goto('/case/');
+  await page.getByTestId('start-blank').click();
+  await page.locator('#new-plat').selectOption('instagram');
+  await page.getByTestId('add-report').click();
+  let card = page.getByTestId('report-instagram');
+  await expect(card.getByTestId('report-details')).toBeVisible();
+  await card.getByTestId('edit-platform').selectOption('youtube');
+  card = page.getByTestId('report-youtube');
+  await card.getByTestId('edit-notes').fill('Reported the demo_video link');
+  await card.getByTestId('report-toggle').click();
+  await expect(card.getByTestId('report-details')).toHaveCount(0);
+  await expect(card).toContainText('Reported the demo_video link');
+  await card.getByTestId('report-toggle').click();
+  await expect(card.getByTestId('edit-platform')).toBeVisible();
+  await card.getByTestId('report-now').click();
+  await expect(card.getByTestId('countdown')).toBeVisible();
+  await expect(card.getByTestId('report-locked')).toBeVisible();
+  await expect(card.getByTestId('edit-platform')).toHaveCount(0);
+  await expect(card.getByTestId('edit-notes')).toHaveCount(0);
+  await expect(card.getByTestId('status')).toBeVisible();
+  await expect(card.getByTestId('status').locator('option[value=not_reported]')).toHaveCount(0);
+  await card.getByTestId('status').selectOption('removed');
+  await expect(card).toContainText('within the deadline');
+});
+
+test('in-app Back button returns to the previous page', async ({ page }) => {
+  await page.goto('/plan/');
+  await expect(page.getByTestId('back')).toBeVisible();
+  await page.goto('/');
+  await expect(page.getByTestId('back')).toHaveCount(0);
+  await navTo(page, 'Platforms');
+  await page.waitForURL(/\/platforms\/$/);
+  await page.locator('a[href="/platforms/telegram/"]').first().click();
+  await page.waitForURL(/\/platforms\/telegram\/$/);
+  await page.getByTestId('back').click();
+  await page.waitForURL(/\/platforms\/$/);
+  await page.getByTestId('back').click();
+  await page.waitForURL(/localhost:\d+\/$/);
 });
 
 test('drafter makes all 4 templates in both languages, copies and downloads a PDF', async ({ page, context, browserName }) => {
@@ -202,11 +254,16 @@ test('evidence log adds entries and exports CSV', async ({ page }) => {
   await page.locator('#ev-handle').fill('@demo_someone');
   await page.getByTestId('add-evidence').click();
   await expect(page.getByTestId('evidence-list')).toContainText('example.com/demo_test');
+  await page.getByTestId('evidence-open').click();
+  await page.locator('[data-testid=evidence-edit] input[type=url]').fill('https://example.com/demo_edited');
+  await page.getByTestId('evidence-save').click();
+  await expect(page.getByTestId('evidence-list')).toContainText('example.com/demo_edited');
+  await expect(page.getByTestId('evidence-list')).not.toContainText('demo_test');
   const [dl] = await Promise.all([page.waitForEvent('download'), page.getByTestId('export-csv').click()]);
   expect(dl.suggestedFilename()).toBe('reclaim-evidence-log.csv');
 });
 
-test('PIN locks the case on this device', async ({ page }) => {
+test('PIN is asked every time a private page opens', async ({ page }) => {
   await page.goto('/');
   await page.getByTestId('cta-demo').click();
   await page.getByTestId('tour-exit').click();
@@ -216,13 +273,18 @@ test('PIN locks the case on this device', async ({ page }) => {
   await page.getByLabel('Lock my case with a PIN').fill('4821');
   await page.getByRole('button', { name: 'Set PIN' }).click();
   await expect(page.getByText('PIN saved')).toBeVisible();
-  await page.evaluate(() => sessionStorage.clear());
-  await page.reload();
+  await page.keyboard.press('Escape');
+  await navTo(page, 'Evidence');
   await expect(page.getByText('This page is locked')).toBeVisible();
   await page.getByLabel('4 digits').fill('1111');
   await page.getByRole('button', { name: 'Unlock' }).click();
   await expect(page.getByText('That PIN is not right')).toBeVisible();
   await page.getByLabel('4 digits').fill('4821');
   await page.getByRole('button', { name: 'Unlock' }).click();
-  await expect(page.getByText('Case tracker')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Evidence kit' })).toBeVisible();
+  await navTo(page, 'My case');
+  await expect(page.getByText('This page is locked')).toBeVisible();
+  await page.getByLabel('4 digits').fill('4821');
+  await page.getByRole('button', { name: 'Unlock' }).click();
+  await expect(page.getByRole('heading', { name: 'Case tracker' })).toBeVisible();
 });

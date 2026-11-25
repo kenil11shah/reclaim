@@ -1,9 +1,9 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { AlarmClock, CheckCircle2, Clock, Trash2, Plus, AlertTriangle } from 'lucide-react';
+import { AlarmClock, CheckCircle2, ChevronDown, Clock, Lock, Pencil, Trash2, Plus, AlertTriangle } from 'lucide-react';
 import { useLocale } from '@/components/locale';
-import { Badge, Button, Card, Input, Label, Notice, PageHeader, Select } from '@/components/ui';
+import { Badge, Button, Card, Input, Label, Notice, PageHeader, Select, Textarea } from '@/components/ui';
 import { SafeLink } from '@/components/links';
 import { PinGate } from '@/components/pin-gate';
 import { useStore } from '@/lib/store';
@@ -55,65 +55,115 @@ function Countdown({ r, now }: { r: Report; now: Date }) {
   );
 }
 
-function ReportCard({ r, now }: { r: Report; now: Date }) {
-  const { t } = useLocale();
+function ReportCard({ r, now, autoOpen = false }: { r: Report; now: Date; autoOpen?: boolean }) {
+  const { t, locale } = useLocale();
   const update = useStore((s) => s.updateReport);
   const remove = useStore((s) => s.removeReport);
   const log = useStore((s) => s.log);
   const id = r.id;
   const name = platformName(r.platform);
+  // Once the 2-hour timer starts, the details that prove the deadline are locked.
+  const started = Boolean(r.reportedAt);
+  const [open, setOpen] = useState(autoOpen);
   const statusTone = r.status === 'removed' ? 'ok' : r.status === 'not_reported' ? 'neutral' : 'brand';
+  const toggleLabel = open ? t('case.hideDetails') : started ? t('case.viewDetails') : t('case.editDetails');
   return (
-    <li className="rounded-2xl border border-line bg-surface p-4 sm:p-5" data-testid={`report-${r.platform}`}>
+    <li className="rounded-2xl border border-line bg-surface p-4 transition-colors hover:border-brand/40 sm:p-5" data-testid={`report-${r.platform}`}>
       <div className="flex items-start justify-between gap-3">
-        <div>
-          <h3 className="text-lg font-bold">{name}</h3>
-          <Badge tone={statusTone}>{t(`case.status.${r.status}` as Key)}</Badge>
-        </div>
-        <button type="button" className="grid h-10 w-10 place-items-center rounded-lg text-muted hover:bg-danger/10 hover:text-danger" aria-label={`${t('case.remove')}: ${name}`} onClick={() => remove(id)}>
+        <button type="button" onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-controls={`rd-${id}`} data-testid="report-toggle"
+          className="-m-1.5 min-w-0 flex-1 rounded-xl p-1.5 text-left hover:bg-brand-soft/40 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/30">
+          <span className="flex items-center gap-2 text-lg font-bold">
+            {name}
+            {started ? <Lock className="h-4 w-4 text-muted" aria-hidden /> : <Pencil className="h-4 w-4 text-brand" aria-hidden />}
+          </span>
+          <span className="mt-1 flex flex-wrap items-center gap-2">
+            <Badge tone={statusTone}>{t(`case.status.${r.status}` as Key)}</Badge>
+            <span className="inline-flex items-center gap-1 text-sm font-semibold text-brand">
+              {toggleLabel}<ChevronDown className={cn('h-4 w-4 transition-transform', open && 'rotate-180')} aria-hidden />
+            </span>
+          </span>
+        </button>
+        <button type="button" className="grid h-10 w-10 shrink-0 place-items-center rounded-lg text-muted hover:bg-danger/10 hover:text-danger" aria-label={`${t('case.remove')}: ${name}`} onClick={() => remove(id)}>
           <Trash2 className="h-4 w-4" aria-hidden />
         </button>
       </div>
       <div className="mt-4"><Countdown r={r} now={now} /></div>
-      {r.status === 'not_reported' && (
+      {!started && (
         <Button className="mt-3" size="sm" data-testid="report-now" onClick={() => { update(id, { status: 'reported', reportedAt: nowIST() }); log({ en: `Reported on ${name}`, hi: `${name} पर रिपोर्ट की` }); }}>
           {t('case.reportNow')}
         </Button>
       )}
-      <div className="mt-4 grid gap-3 sm:grid-cols-3">
-        <div>
-          <Label htmlFor={`st-${id}`}>{t('case.status')}</Label>
-          <Select id={`st-${id}`} value={r.status} data-testid="status" onChange={(e) => {
-            const status = e.target.value as Report['status'];
-            const patch: Partial<Report> = { status };
-            if (status === 'removed' && !r.resolvedAt) patch.resolvedAt = nowIST();
-            if (status !== 'removed') patch.resolvedAt = null;
-            if (status !== 'not_reported' && !r.reportedAt) patch.reportedAt = nowIST();
-            update(id, patch);
-            log({ en: `${name}: ${t(`case.status.${status}` as Key)}`, hi: `${name}: ${status}` });
-          }}>
-            {reportStatuses.map((s) => <option key={s} value={s}>{t(`case.status.${s}` as Key)}</option>)}
-          </Select>
-        </div>
-        <div>
-          <Label htmlFor={`ra-${id}`}>{t('case.reportedAt')}</Label>
-          <Input id={`ra-${id}`} type="datetime-local" data-testid="reported-at" value={toLocalInput(r.reportedAt)} onChange={(e) => {
-            const v = fromLocalInput(e.target.value);
-            update(id, { reportedAt: v, status: v && r.status === 'not_reported' ? 'reported' : r.status });
-          }} />
-        </div>
-        <div>
-          <Label htmlFor={`ref-${id}`}>{t('case.refId')}</Label>
-          <Input id={`ref-${id}`} value={r.refId} onChange={(e) => update(id, { refId: e.target.value })} autoComplete="off" />
-        </div>
-        {r.status === 'removed' && (
+      {started && (
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
           <div>
-            <Label htmlFor={`rs-${id}`}>{t('case.resolvedAt')}</Label>
-            <Input id={`rs-${id}`} type="datetime-local" value={toLocalInput(r.resolvedAt)} onChange={(e) => update(id, { resolvedAt: fromLocalInput(e.target.value) })} />
+            <Label htmlFor={`st-${id}`}>{t('case.status')}</Label>
+            <Select id={`st-${id}`} value={r.status} data-testid="status" onChange={(e) => {
+              const status = e.target.value as Report['status'];
+              const patch: Partial<Report> = { status };
+              if (status === 'removed' && !r.resolvedAt) patch.resolvedAt = nowIST();
+              if (status !== 'removed') patch.resolvedAt = null;
+              update(id, patch);
+              log({ en: `${name}: ${t(`case.status.${status}` as Key)}`, hi: `${name}: ${status}` });
+            }}>
+              {reportStatuses.filter((s) => s !== 'not_reported').map((s) => <option key={s} value={s}>{t(`case.status.${s}` as Key)}</option>)}
+            </Select>
           </div>
-        )}
-      </div>
-      {r.notes && <p className="mt-3 text-sm text-muted">{r.notes}</p>}
+          <div>
+            <Label htmlFor={`ref-${id}`}>{t('case.refId')}</Label>
+            <Input id={`ref-${id}`} value={r.refId} onChange={(e) => update(id, { refId: e.target.value })} autoComplete="off" />
+          </div>
+          {r.status === 'removed' && (
+            <div>
+              <Label htmlFor={`rs-${id}`}>{t('case.resolvedAt')}</Label>
+              <Input id={`rs-${id}`} type="datetime-local" value={toLocalInput(r.resolvedAt)} onChange={(e) => update(id, { resolvedAt: fromLocalInput(e.target.value) })} />
+            </div>
+          )}
+        </div>
+      )}
+      {open && (
+        <div id={`rd-${id}`} className="mt-4 border-t border-line pt-4" data-testid="report-details">
+          {started ? (
+            <>
+              <p className="flex items-start gap-2 rounded-xl bg-bg px-3 py-2.5 text-sm" data-testid="report-locked">
+                <Lock className="mt-0.5 h-4 w-4 shrink-0 text-muted" aria-hidden />{t('case.lockedNote')}
+              </p>
+              <dl className="mt-3 grid gap-3 text-[15px] sm:grid-cols-2">
+                <div><dt className="text-sm text-muted">{t('case.platform')}</dt><dd className="font-semibold">{name}</dd></div>
+                <div><dt className="text-sm text-muted">{t('case.reportedAt')}</dt><dd className="font-semibold">{formatIST(r.reportedAt, locale)}</dd></div>
+                <div className="sm:col-span-2"><dt className="text-sm text-muted">{t('case.notes')}</dt><dd className="whitespace-pre-wrap">{r.notes || '-'}</dd></div>
+              </dl>
+            </>
+          ) : (
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div>
+                <Label htmlFor={`pl-${id}`}>{t('case.platform')}</Label>
+                <Select id={`pl-${id}`} value={r.platform} data-testid="edit-platform" onChange={(e) => update(id, { platform: e.target.value })}>
+                  {platforms.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
+                </Select>
+              </div>
+              <div>
+                <Label htmlFor={`ref-${id}`}>{t('case.refId')}</Label>
+                <Input id={`ref-${id}`} value={r.refId} onChange={(e) => update(id, { refId: e.target.value })} autoComplete="off" />
+              </div>
+              <div className="sm:col-span-2">
+                <Label htmlFor={`nt-${id}`}>{t('case.notes')}</Label>
+                <Textarea id={`nt-${id}`} rows={2} data-testid="edit-notes" placeholder={t('case.notesHint')} value={r.notes} onChange={(e) => update(id, { notes: e.target.value })} />
+              </div>
+              <div className="sm:col-span-2">
+                <Label htmlFor={`ra-${id}`}>{t('case.reportedEarlier')}</Label>
+                <Input id={`ra-${id}`} type="datetime-local" data-testid="reported-at" value={toLocalInput(r.reportedAt)} onChange={(e) => {
+                  const v = fromLocalInput(e.target.value);
+                  if (!v) return;
+                  update(id, { reportedAt: v, status: 'reported' });
+                  log({ en: `Reported on ${name}`, hi: `${name} पर रिपोर्ट की` });
+                }} />
+                <p className="mt-1 text-xs text-muted">{t('case.reportedEarlierHelp')}</p>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+      {!open && r.notes && <p className="mt-3 line-clamp-2 text-sm text-muted">{r.notes}</p>}
     </li>
   );
 }
@@ -128,6 +178,7 @@ function CaseInner() {
   const wipe = useStore((s) => s.wipe);
   const endTour = useStore((s) => s.endTour);
   const [newPlat, setNewPlat] = useState(platforms[0].id);
+  const [justAdded, setJustAdded] = useState<string | null>(null);
   const now = useNow(1000);
   const hydrated = useStore((s) => s.hydrated);
 
@@ -175,8 +226,8 @@ function CaseInner() {
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
         <section data-tour="case-reports" aria-labelledby="reports-h">
           <h2 id="reports-h" className="text-xl font-bold">{t('case.reports')}</h2>
-          <ul className="mt-4 space-y-4">{c.reports.map((r) => <ReportCard key={r.id} r={r} now={now} />)}</ul>
-          <form className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-end" onSubmit={(e) => { e.preventDefault(); addReport(newPlat); }}>
+          <ul className="mt-4 space-y-4">{c.reports.map((r) => <ReportCard key={r.id} r={r} now={now} autoOpen={r.id === justAdded} />)}</ul>
+          <form className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-end" onSubmit={(e) => { e.preventDefault(); addReport(newPlat); const rs = useStore.getState().case?.reports ?? []; setJustAdded(rs[rs.length - 1]?.id ?? null); }}>
             <div className="flex-1">
               <Label htmlFor="new-plat">{t('case.platform')}</Label>
               <Select id="new-plat" value={newPlat} onChange={(e) => setNewPlat(e.target.value)}>

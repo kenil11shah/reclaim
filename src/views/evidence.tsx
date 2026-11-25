@@ -1,12 +1,13 @@
 'use client';
 import { useState } from 'react';
-import { CheckCircle2, ShieldAlert, Trash2, FileDown, Download } from 'lucide-react';
+import { CheckCircle2, ShieldAlert, Trash2, FileDown, Download, Pencil } from 'lucide-react';
 import { useLocale } from '@/components/locale';
 import { Button, Card, Input, Label, Notice, PageHeader, Select, Textarea } from '@/components/ui';
 import { PinGate } from '@/components/pin-gate';
 import { useStore } from '@/lib/store';
 import { platforms, platformName } from '@/lib/content';
-import { formatIST, fromLocalInput } from '@/lib/time';
+import { formatIST, fromLocalInput, toLocalInput } from '@/lib/time';
+import type { Evidence } from '@/lib/schemas';
 import { downloadBlob, textToPdf } from '@/lib/pdf';
 import { isHttpUrl } from '@/lib/utils';
 
@@ -16,11 +17,72 @@ function csvEscape(v: string) {
   return /^[=+\-@]/.test(s) ? `"'${s}"` : `"${s}"`;
 }
 
+function EvidenceItem({ e }: { e: Evidence }) {
+  const { t, locale } = useLocale();
+  const update = useStore((s) => s.updateEvidence);
+  const remove = useStore((s) => s.removeEvidence);
+  const [editing, setEditing] = useState(false);
+  const [f, setF] = useState({ url: e.url, platform: e.platform, handle: e.handle, seen: toLocalInput(e.seenAt), notes: e.notes });
+  const [err, setErr] = useState('');
+  const fid = (k: string) => `ev-${k}-${e.id}`;
+  if (editing) {
+    return (
+      <li className="rounded-xl border border-brand/50 bg-surface p-4" data-testid="evidence-edit">
+        <form noValidate className="grid gap-3 sm:grid-cols-2" onSubmit={(ev) => {
+          ev.preventDefault();
+          if (!isHttpUrl(f.url.trim())) return setErr(t('evidence.invalidUrl'));
+          update(e.id, { url: f.url.trim(), platform: f.platform, handle: f.handle.trim(), seenAt: fromLocalInput(f.seen), notes: f.notes.trim() });
+          setErr(''); setEditing(false);
+        }}>
+          <div className="sm:col-span-2">
+            <Label htmlFor={fid('url')}>{t('evidence.f.url')}</Label>
+            <Input id={fid('url')} type="url" inputMode="url" value={f.url} onChange={(x) => setF({ ...f, url: x.target.value })} aria-invalid={Boolean(err)} autoComplete="off" />
+            {err && <p className="mt-1 text-sm text-danger">{err}</p>}
+          </div>
+          <div>
+            <Label htmlFor={fid('pl')}>{t('evidence.f.platform')}</Label>
+            <Select id={fid('pl')} value={f.platform} onChange={(x) => setF({ ...f, platform: x.target.value })}>
+              {platforms.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
+              <option value="other">{t('evidence.other')}</option>
+            </Select>
+          </div>
+          <div><Label htmlFor={fid('h')}>{t('evidence.f.handle')}</Label><Input id={fid('h')} value={f.handle} onChange={(x) => setF({ ...f, handle: x.target.value })} autoComplete="off" /></div>
+          <div><Label htmlFor={fid('s')}>{t('evidence.f.seenAt')}</Label><Input id={fid('s')} type="datetime-local" value={f.seen} onChange={(x) => setF({ ...f, seen: x.target.value })} /></div>
+          <div><Label htmlFor={fid('n')}>{t('evidence.f.notes')}</Label><Textarea id={fid('n')} rows={2} value={f.notes} onChange={(x) => setF({ ...f, notes: x.target.value })} /></div>
+          <div className="flex gap-2 sm:col-span-2">
+            <Button type="submit" size="sm" data-testid="evidence-save">{t('common.save')}</Button>
+            <Button type="button" size="sm" variant="ghost" onClick={() => { setEditing(false); setErr(''); setF({ url: e.url, platform: e.platform, handle: e.handle, seen: toLocalInput(e.seenAt), notes: e.notes }); }}>{t('common.cancel')}</Button>
+          </div>
+        </form>
+      </li>
+    );
+  }
+  return (
+    <li className="rounded-xl border border-line bg-surface p-4 transition-colors hover:border-brand/40">
+      <div className="flex items-start gap-3">
+        <button type="button" onClick={() => setEditing(true)} data-testid="evidence-open"
+          className="-m-1.5 min-w-0 flex-1 rounded-lg p-1.5 text-left hover:bg-brand-soft/40 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/30">
+          <span className="block break-all font-mono text-[14px]">{e.url}</span>
+          <span className="mt-1 block text-sm text-muted">
+            {e.platform === 'other' ? t('evidence.other') : platformName(e.platform)}
+            {e.handle && <> · {e.handle}</>}
+            {e.seenAt && <> · {formatIST(e.seenAt, locale)}</>}
+          </span>
+          {e.notes && <span className="mt-1 block text-[15px]">{e.notes}</span>}
+          <span className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-brand"><Pencil className="h-3.5 w-3.5" aria-hidden />{t('common.edit')}</span>
+        </button>
+        <button type="button" onClick={() => remove(e.id)} className="grid h-10 w-10 shrink-0 place-items-center rounded-lg text-muted hover:bg-danger/10 hover:text-danger" aria-label={`${t('common.delete')}: ${e.url}`}>
+          <Trash2 className="h-4 w-4" aria-hidden />
+        </button>
+      </div>
+    </li>
+  );
+}
+
 function EvidenceInner() {
   const { t, locale } = useLocale();
   const c = useStore((s) => s.case);
   const add = useStore((s) => s.addEvidence);
-  const remove = useStore((s) => s.removeEvidence);
   const [url, setUrl] = useState('');
   const [platform, setPlatform] = useState(platforms[0].id);
   const [handle, setHandle] = useState('');
@@ -108,24 +170,7 @@ function EvidenceInner() {
           <>
             <p className="mt-6 text-sm text-muted">{t('evidence.count', { n: items.length })}</p>
             <ul className="mt-2 space-y-3" data-testid="evidence-list">
-              {items.map((e) => (
-                <li key={e.id} className="rounded-xl border border-line bg-surface p-4">
-                  <div className="flex items-start gap-3">
-                    <div className="min-w-0 flex-1">
-                      <p className="break-all font-mono text-[14px]">{e.url}</p>
-                      <p className="mt-1 text-sm text-muted">
-                        {e.platform === 'other' ? t('evidence.other') : platformName(e.platform)}
-                        {e.handle && <> · {e.handle}</>}
-                        {e.seenAt && <> · {formatIST(e.seenAt, locale)}</>}
-                      </p>
-                      {e.notes && <p className="mt-1 text-[15px]">{e.notes}</p>}
-                    </div>
-                    <button type="button" onClick={() => remove(e.id)} className="grid h-10 w-10 shrink-0 place-items-center rounded-lg text-muted hover:bg-danger/10 hover:text-danger" aria-label={`${t('common.delete')}: ${e.url}`}>
-                      <Trash2 className="h-4 w-4" aria-hidden />
-                    </button>
-                  </div>
-                </li>
-              ))}
+              {items.map((e) => <EvidenceItem key={e.id} e={e} />)}
             </ul>
           </>
         )}

@@ -1,15 +1,16 @@
 'use client';
 import { useEffect, useState, type ReactNode } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Menu, X, ShieldAlert } from 'lucide-react';
+import { usePathname, useRouter } from 'next/navigation';
+import { Menu, X, ShieldAlert, ArrowLeft } from 'lucide-react';
 import { useLocale } from './locale';
 import { SafeLink } from './links';
 import { leaveNow } from './safety';
 import dynamic from 'next/dynamic';
 import { TourCard } from './tour';
 import { useStore } from '@/lib/store';
-import { cn, neutralPath, href, PREVIEW } from '@/lib/utils';
+import { cn, neutralPath, href, go, PREVIEW } from '@/lib/utils';
+import { readTrail, writeTrail, parentPath, TRAIL_BACK } from './trail';
 import type { Key } from '@/lib/i18n';
 
 const DeleteDialog = dynamic(() => import('./dialogs').then((m) => m.DeleteDialog), { ssr: false });
@@ -75,6 +76,26 @@ export function Shell({ children }: { children: ReactNode }) {
   }, [menu]);
 
   useEffect(() => setMenu(false), [pathname]);
+
+  // In-app trail for the Back button. The browser history stays at one entry on purpose,
+  // so that after "Leave now" the browser's Back button cannot return to Reclaim.
+  const router = useRouter();
+  useEffect(() => {
+    const cur = neutralPath(pathname) + window.location.search;
+    const trail = readTrail();
+    let back = false;
+    try { back = sessionStorage.getItem(TRAIL_BACK) === '1'; sessionStorage.removeItem(TRAIL_BACK); } catch { /* ignore */ }
+    if (!back && trail[trail.length - 1] !== cur) trail.push(cur);
+    writeTrail(trail.slice(-30));
+  }, [pathname]);
+  const goBack = () => {
+    const trail = readTrail();
+    trail.pop();
+    const prev = trail[trail.length - 1] ?? parentPath(here);
+    writeTrail(trail);
+    try { sessionStorage.setItem(TRAIL_BACK, '1'); } catch { /* ignore */ }
+    go(router, href(locale, prev));
+  };
 
   const here = neutralPath(pathname);
   const otherLocale = locale === 'en' ? 'hi' : 'en';
@@ -146,7 +167,15 @@ export function Shell({ children }: { children: ReactNode }) {
           </nav>
         )}
       </header>
-      <main id="main" className="mx-auto w-full max-w-content flex-1 px-4 pb-16 pt-8 sm:pt-12">{children}</main>
+      <main id="main" className="mx-auto w-full max-w-content flex-1 px-4 pb-16 pt-6 sm:pt-8">
+        {here !== '/' && (
+          <button type="button" onClick={goBack} data-testid="back"
+            className="mb-4 inline-flex min-h-[44px] items-center gap-1.5 rounded-xl px-2 text-sm font-semibold text-brand hover:bg-brand-soft/60 sm:mb-6">
+            <ArrowLeft className="h-4 w-4" aria-hidden />{t('common.back')}
+          </button>
+        )}
+        {children}
+      </main>
       <footer className={cn('border-t border-line bg-surface', touring && 'pb-44 sm:pb-40')}>
         <div className="mx-auto grid max-w-content gap-6 px-4 py-8 sm:grid-cols-[1.4fr_1fr]">
           <div>

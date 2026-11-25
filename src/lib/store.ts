@@ -30,6 +30,7 @@ export interface State {
   updateReport: (id: string, patch: Partial<Report>) => void;
   removeReport: (id: string) => void;
   addEvidence: (e: Omit<Evidence, 'id'>) => void;
+  updateEvidence: (id: string, patch: Partial<Omit<Evidence, 'id'>>) => void;
   removeEvidence: (id: string) => void;
   log: (event: string | Bi) => void;
   setNeutralTitle: (v: boolean) => void;
@@ -146,6 +147,8 @@ export const useStore = create<State>()(
           const c = s.case ?? newCase(s.answers, [], []);
           return { case: { ...c, evidence: [...c.evidence, { ...e, id: uid('e') }] } };
         }),
+      updateEvidence: (id, patch) =>
+        set((s) => (s.case ? { case: { ...s.case, evidence: s.case.evidence.map((e) => (e.id === id ? { ...e, ...patch } : e)) } } : {})),
       removeEvidence: (id) => set((s) => (s.case ? { case: { ...s.case, evidence: s.case.evidence.filter((e) => e.id !== id) } } : {})),
       log: (event) => set((s) => (s.case ? { case: { ...s.case, timeline: [...s.case.timeline, { at: nowIST(), event }] } } : {})),
       setNeutralTitle: (v) => set((s) => ({ settings: { ...s.settings, neutralTitle: v } })),

@@ -16,7 +16,7 @@ function readPin(): { hash: string; salt: string } | null {
 }
 
 /**
- * Hides case data behind the optional 4-digit PIN until unlocked in this tab.
+ * Hides case data behind the optional 4-digit PIN. It asks each time the page opens.
  * The check runs in a layout effect, before the first paint and before the store
  * loads saved data, so private details never flash on screen.
  */
@@ -25,11 +25,8 @@ export function PinGate({ children }: { children: ReactNode }) {
   const [pinInfo, setPinInfo] = useState<{ hash: string; salt: string } | null>(null);
   const [pin, setPin] = useState('');
   const [err, setErr] = useState('');
-  useLayoutEffect(() => {
-    let unlocked = false;
-    try { unlocked = sessionStorage.getItem('reclaim:unlocked') === '1'; } catch { /* ignore */ }
-    if (!unlocked) setPinInfo(readPin());
-  }, []);
+  // Asks every time a protected page is opened. Unlocking lasts only while you stay on this page.
+  useLayoutEffect(() => { setPinInfo(readPin()); }, []);
   if (!pinInfo) return <>{children}</>;
   return (
     <Card className="mx-auto max-w-sm text-center">
@@ -41,7 +38,6 @@ export function PinGate({ children }: { children: ReactNode }) {
         onSubmit={async (e) => {
           e.preventDefault();
           if ((await hashPin(pin, pinInfo.salt)) === pinInfo.hash) {
-            try { sessionStorage.setItem('reclaim:unlocked', '1'); } catch { /* ignore */ }
             setPinInfo(null);
           } else {
             setErr(t('lock.wrong'));

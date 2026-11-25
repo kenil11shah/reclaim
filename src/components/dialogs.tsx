@@ -86,7 +86,6 @@ export function PrivacyDialog({ open, onOpenChange }: { open: boolean; onOpenCha
                 if (!/^\d{4}$/.test(pin)) return setMsg(t('privacy.pinInvalid'));
                 const salt = Array.from(crypto.getRandomValues(new Uint8Array(8))).map((b) => b.toString(16).padStart(2, '0')).join('');
                 setPin(await hashPin(pin, salt), salt);
-                try { sessionStorage.setItem('reclaim:unlocked', '1'); } catch { /* ignore */ }
                 setPinValue('');
                 setMsg(t('privacy.pinSaved'));
               }}
