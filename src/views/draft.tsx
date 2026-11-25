@@ -5,6 +5,7 @@ import { useLocale } from '@/components/locale';
 import { Button, Card, Input, Label, Notice, PageHeader, Select, Textarea } from '@/components/ui';
 import { ExternalLink } from '@/components/links';
 import { PinGate } from '@/components/pin-gate';
+import { CopyButton, SendGuide } from '@/components/send-guide';
 import { useStore } from '@/lib/store';
 import { legal, platforms, platformById, flow } from '@/lib/content';
 import { fillTemplate, type DraftFields, type DraftLang, type TemplateId } from '@content/templates';
@@ -88,7 +89,11 @@ function DraftInner() {
   const set = <K extends keyof typeof f>(k: K, v: (typeof f)[K]) => setF((p) => ({ ...p, [k]: v }));
   const lines = (v: string) => v.split('\n').map((x) => x.trim()).filter(Boolean);
   const plat = platformById[escPlatform];
-  const officialUrl = tpl === 'ncrp' ? 'https://cybercrime.gov.in/' : tpl === 'grievance' && plat ? (plat.grievanceOfficer.route === 'form' ? plat.grievanceOfficer.value : plat.grievanceOfficer.route === 'email' ? `mailto:${plat.grievanceOfficer.value}` : null) : null;
+  const officialUrl = tpl === 'ncrp' ? 'https://cybercrime.gov.in/' : null;
+  const onCopied = (ok: boolean) => {
+    setMsg(ok ? t('common.copied') : t('common.copyFailed'));
+    if (ok && c) log({ en: `Copied ${tpl.toUpperCase()} draft`, hi: `${tpl.toUpperCase()} ड्राफ़्ट कॉपी किया` });
+  };
 
   return (
     <div>
@@ -195,12 +200,15 @@ function DraftInner() {
         <div className="space-y-3" data-tour="draft-output">
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-bold" id="out-label">{t('draft.output')}</h2>
-            {edited && <button type="button" className="inline-flex items-center gap-1 text-sm font-semibold text-brand" onClick={() => setEdited(false)}><RotateCcw className="h-4 w-4" aria-hidden />{t('draft.reset')}</button>}
+            <div className="flex items-center gap-3">
+              {edited && <button type="button" className="inline-flex items-center gap-1 text-sm font-semibold text-brand" onClick={() => setEdited(false)}><RotateCcw className="h-4 w-4" aria-hidden />{t('draft.reset')}</button>}
+              <CopyButton text={text} label={t('draft.copyShort')} testId="draft-copy-top" variant="primary" size="sm" onDone={onCopied} />
+            </div>
           </div>
           <Textarea ref={outRef} aria-labelledby="out-label" data-testid="draft-output" lang={lang} value={text} onChange={(e) => { setText(e.target.value); setEdited(true); }} className="min-h-[460px] font-[inherit] text-[15px]" />
           {edited && <p className="text-sm text-muted">{t('draft.edited')}</p>}
           <div className="flex flex-wrap gap-2">
-            <Button data-testid="draft-copy" onClick={async () => { const ok = await copyText(text, outRef.current); setMsg(ok ? t('common.copied') : t('common.copyFailed')); if (ok && c) log({ en: `Copied ${tpl.toUpperCase()} draft`, hi: `${tpl.toUpperCase()} ड्राफ़्ट कॉपी किया` }); }}>
+            <Button data-testid="draft-copy" onClick={async () => { const ok = await copyText(text, outRef.current); onCopied(ok); }}>
               <Copy className="h-4 w-4" aria-hidden />{t('draft.copy')}
             </Button>
             {lang === 'en' ? (
@@ -219,6 +227,7 @@ function DraftInner() {
           {lang === 'hi' && <p className="text-sm text-muted">{t('draft.pdfHiHelp')}</p>}
           <p role="status" aria-live="polite" className="text-sm font-semibold text-ok">{msg}</p>
           <p className="text-xs text-muted">{t('draft.footerNote')}</p>
+          <SendGuide tpl={tpl} plat={plat} text={text} onDone={onCopied} />
         </div>
       </div>
       </div>

@@ -3,9 +3,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { z } from 'zod';
 import { rawContent } from '../src/lib/content';
-import { platformSchema, legalSchema, helplineSchema, criterionSchema, platformScoreSchema, incidentSchema, flowSchema, caseSchema } from '../src/lib/schemas';
+import { platformSchema, legalSchema, helplineSchema, criterionSchema, platformScoreSchema, incidentSchema, flowSchema, caseSchema, sendStepsSchema } from '../src/lib/schemas';
 import { summarize } from '../src/lib/score';
 import en from '../content/i18n/en.json';
+import sendStepsRaw from '../content/send-steps.json';
 import hi from '../content/i18n/hi.json';
 
 function parse<T>(label: string, schema: z.ZodType<T>, data: unknown): T {
@@ -23,6 +24,7 @@ const criteria = parse('criteria.json', z.array(criterionSchema), rawContent.cri
 const scores = parse('scores.json', z.array(platformScoreSchema), rawContent.scoresRaw);
 const incidents = parse('incidents.json', z.array(incidentSchema), rawContent.incidentsRaw);
 const flow = parse('flow.json', flowSchema, rawContent.flowRaw);
+parse('send-steps.json', sendStepsSchema, sendStepsRaw);
 const demoCase = parse('demo/case.json', caseSchema, rawContent.demoCaseRaw);
 
 const errors: string[] = [];

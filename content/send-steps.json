@@ -1,0 +1,59 @@
+{
+  "ncrp": {
+    "steps": [
+      { "en": "Go to cybercrime.gov.in and click \"File a complaint\". Read the note and tick \"I Accept\".", "hi": "cybercrime.gov.in पर जाएँ और \"File a complaint\" पर क्लिक करें। संदेश पढ़कर \"I Accept\" पर टिक करें।" },
+      { "en": "In the section for crimes against women and children, choose \"Report and Track\". You get a Complaint ID and updates by SMS and email. \"Report Anonymously\" is also there if you don't want to give your details.", "hi": "महिलाओं और बच्चों के ख़िलाफ़ अपराध वाले सेक्शन में \"Report and Track\" चुनें। इससे आपको Complaint ID और SMS व ईमेल पर अपडेट मिलते हैं। अगर आप अपनी जानकारी नहीं देना चाहते तो \"Report Anonymously\" का विकल्प भी है।" },
+      { "en": "Log in with your name and mobile number. Enter the OTP (valid for 30 minutes) and answer the security question.", "hi": "अपने नाम और मोबाइल नंबर से लॉग इन करें। OTP (30 मिनट तक मान्य) डालें और सुरक्षा प्रश्न का जवाब दें।" },
+      { "en": "Under Incident Details, pick the category, add the date and where it happened, and upload your screenshots (up to 5 MB). Paste this draft into the additional information box. Click \"Save and Next\".", "hi": "Incident Details में श्रेणी चुनें, तारीख़ और घटना की जगह लिखें, और स्क्रीनशॉट अपलोड करें (5 MB तक)। यह ड्राफ़्ट अतिरिक्त जानकारी वाले बॉक्स में पेस्ट करें। \"Save and Next\" पर क्लिक करें।" },
+      { "en": "Add suspect details if you know them, then your own details. Keep an ID document ready, because the form asks for one. Click \"Save & Preview\".", "hi": "अगर पता हो तो आरोपी की जानकारी जोड़ें, फिर अपनी जानकारी भरें। एक पहचान पत्र तैयार रखें, क्योंकि फ़ॉर्म उसे माँगता है। \"Save & Preview\" पर क्लिक करें।" },
+      { "en": "Check everything and click \"Confirm & Submit\". Save the Complaint ID. It is not an FIR number.", "hi": "सब कुछ जाँचें और \"Confirm & Submit\" पर क्लिक करें। Complaint ID संभालकर रखें। यह FIR नंबर नहीं है।" },
+      { "en": "To check progress later, log in through \"Report and Track\" and click \"Check Status\".", "hi": "बाद में प्रगति देखने के लिए \"Report and Track\" से लॉग इन करें और \"Check Status\" पर क्लिक करें।" },
+      { "en": "Can't use the portal? Call 1930.", "hi": "पोर्टल इस्तेमाल नहीं कर पा रहे? 1930 पर कॉल करें।" }
+    ],
+    "sources": [
+      { "label": "MHA citizen manual: reporting cybercrime against women and children", "url": "https://cybercrime.gov.in/UploadMedia/MHA-CitizenManualReportCPRGRcomplaints-v10.pdf" },
+      { "label": "PIB release on the MeitY NCII SOP (1930)", "url": "https://negd.gov.in/wp-content/uploads/2025/11/Press-Release_Press-Information-Bureau2-1.pdf" }
+    ]
+  },
+  "grievance": {
+    "steps": [
+      { "en": "Report the content inside the app first, if you haven't already. Note the report reference ID.", "hi": "अगर अब तक नहीं किया है तो पहले ऐप के अंदर सामग्री रिपोर्ट करें। रिपोर्ट का रेफ़रेंस ID लिख लें।" },
+      { "route": "email", "en": "Email the Grievance Officer at the address above. Put the subject line in the subject box and paste the rest as the email body. Attach your screenshots.", "hi": "ऊपर दिए पते पर शिकायत अधिकारी को ईमेल करें। विषय वाली लाइन subject में डालें और बाक़ी टेक्स्ट ईमेल के मुख्य भाग में पेस्ट करें। स्क्रीनशॉट अटैच करें।" },
+      { "route": "form", "en": "Open the official grievance form above and paste the text into the description box. Attach screenshots if the form allows it.", "hi": "ऊपर दिया आधिकारिक शिकायत फ़ॉर्म खोलें और टेक्स्ट विवरण वाले बॉक्स में पेस्ट करें। अगर फ़ॉर्म में विकल्प हो तो स्क्रीनशॉट अटैच करें।" },
+      { "en": "Take a screenshot of what you sent and note the date and time.", "hi": "जो भेजा उसका स्क्रीनशॉट लें और तारीख़ व समय लिख लें।" },
+      { "en": "No reply within 30 days, or you disagree with the answer? Appeal to the Grievance Appellate Committee at gac.gov.in within 30 days. Use \"Appellant Login\", enter your mobile number and the captcha, then the OTP, and file the appeal. GAC only takes appeals after you have contacted the Grievance Officer.", "hi": "30 दिन में जवाब नहीं आया, या जवाब से सहमत नहीं हैं? 30 दिन के अंदर gac.gov.in पर शिकायत अपीलीय समिति (GAC) में अपील करें। \"Appellant Login\" चुनें, मोबाइल नंबर और कैप्चा डालें, फिर OTP डालकर अपील दर्ज करें। GAC अपील तभी लेती है जब आप पहले शिकायत अधिकारी से संपर्क कर चुके हों।" },
+      { "en": "GAC does not handle cybercrime. Also file on cybercrime.gov.in or call 1930.", "hi": "GAC साइबर अपराध के मामले नहीं देखती। cybercrime.gov.in पर भी शिकायत करें या 1930 पर कॉल करें।" }
+    ],
+    "sources": [
+      { "label": "Grievance Appellate Committee (how to appeal)", "url": "https://gac.gov.in/" },
+      { "label": "GAC list of platform Grievance Officers", "url": "https://gac.gov.in/Home/getSSMIOfficerList" }
+    ]
+  },
+  "police": {
+    "steps": [
+      { "en": "Print this letter or save it as a PDF. Fill in the police station name and sign it.", "hi": "यह पत्र प्रिंट करें या PDF में सेव करें। पुलिस स्टेशन का नाम भरें और हस्ताक्षर करें।" },
+      { "en": "Take it to any police station. Under Zero FIR you can file at any police station, whatever the jurisdiction.", "hi": "इसे किसी भी पुलिस स्टेशन ले जाएँ। ज़ीरो FIR के तहत आप क्षेत्राधिकार की परवाह किए बिना किसी भी पुलिस स्टेशन में FIR दर्ज करा सकते हैं।" },
+      { "en": "Carry printed screenshots and your list of links.", "hi": "स्क्रीनशॉट के प्रिंट और लिंक की सूची साथ ले जाएँ।" },
+      { "en": "Ask for your copy of the FIR. Victims get it free.", "hi": "FIR की अपनी कॉपी माँगें। पीड़ित को यह मुफ़्त मिलती है।" },
+      { "en": "You can also report by electronic communication without visiting the station. For cybercrime, the national online route is cybercrime.gov.in (use the NCRP template).", "hi": "आप पुलिस स्टेशन गए बिना इलेक्ट्रॉनिक माध्यम से भी रिपोर्ट कर सकते हैं। साइबर अपराध के लिए राष्ट्रीय ऑनलाइन रास्ता cybercrime.gov.in है (NCRP टेम्पलेट इस्तेमाल करें)।" },
+      { "en": "You are entitled to an update on the case within 90 days.", "hi": "आपको 90 दिन के अंदर मामले की प्रगति की जानकारी पाने का हक़ है।" },
+      { "en": "In danger right now? Call 112.", "hi": "अभी ख़तरे में हैं? 112 पर कॉल करें।" }
+    ],
+    "sources": [
+      { "label": "PIB: Highlights of the new criminal laws (30 Jul 2024)", "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2039055" }
+    ]
+  },
+  "followup": {
+    "steps": [
+      { "en": "Send it through the same channel you used the first time, and quote your reference ID.", "hi": "इसे उसी रास्ते से भेजें जिससे पहली बार भेजा था, और अपना रेफ़रेंस ID लिखें।" },
+      { "en": "For a platform: send it to the same Grievance Officer contact shown above. If 30 days pass with no response, appeal at gac.gov.in.", "hi": "प्लेटफ़ॉर्म के लिए: इसे ऊपर दिखाए गए उसी शिकायत अधिकारी के संपर्क पर भेजें। 30 दिन में जवाब न आए तो gac.gov.in पर अपील करें।" },
+      { "en": "For the police: give it to the same police station and keep a copy. You are entitled to an update on the case within 90 days.", "hi": "पुलिस के लिए: इसे उसी पुलिस स्टेशन में दें और एक कॉपी अपने पास रखें। आपको 90 दिन के अंदर मामले की प्रगति की जानकारी पाने का हक़ है।" },
+      { "en": "For a cybercrime.gov.in complaint: log in through \"Report and Track\" and click \"Check Status\".", "hi": "cybercrime.gov.in की शिकायत के लिए: \"Report and Track\" से लॉग इन करें और \"Check Status\" पर क्लिक करें।" }
+    ],
+    "sources": [
+      { "label": "Grievance Appellate Committee (how to appeal)", "url": "https://gac.gov.in/" },
+      { "label": "PIB: Highlights of the new criminal laws (30 Jul 2024)", "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2039055" },
+      { "label": "MHA citizen manual: reporting cybercrime against women and children", "url": "https://cybercrime.gov.in/UploadMedia/MHA-CitizenManualReportCPRGRcomplaints-v10.pdf" }
+    ]
+  }
+}

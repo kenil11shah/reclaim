@@ -94,12 +94,55 @@ test('drafter makes all 4 templates in both languages, copies and downloads a PD
   await page.getByTestId('draft-lang-en').click();
   await page.getByTestId('tpl-ncrp').click();
   await page.getByTestId('draft-copy').click();
-  await expect(page.getByText('Copied')).toBeVisible();
+  await expect(page.locator('p[role=status]')).toHaveText('Copied');
   const clip = await page.evaluate(() => navigator.clipboard.readText());
   expect(clip).toContain('cybercrime');
   const [dl] = await Promise.all([page.waitForEvent('download'), page.getByTestId('draft-pdf').click()]);
   expect(dl.suggestedFilename()).toBe('reclaim-ncrp-draft.pdf');
   expect(browserName).toBe('chromium');
+});
+
+test('drafter shows where to send each draft, with copy buttons', async ({ page, context }) => {
+  await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+  const clip = () => page.evaluate(() => navigator.clipboard.readText());
+  await page.goto('/');
+  await page.getByTestId('cta-demo').click();
+  await page.goto('/draft/?t=grievance&p=telegram');
+  const guide = page.getByTestId('send-guide');
+  await expect(guide).toContainText('Where to send this');
+  await expect(page.getByTestId('send-email')).toHaveText('grievance-in@telegram.org');
+  await page.getByTestId('copy-email').click();
+  expect(await clip()).toBe('grievance-in@telegram.org');
+  await expect(page.getByTestId('copy-email')).toContainText('Copied');
+  await page.getByTestId('copy-subject').click();
+  expect(await clip()).toMatch(/^Urgent removal under Rule 3\(2\)\(b\)/);
+  await page.getByTestId('copy-body').click();
+  const body = await clip();
+  expect(body).not.toMatch(/^Subject:/m);
+  expect(body).toContain('This is not legal advice.');
+  await expect(page.getByTestId('open-email')).toHaveAttribute('href', /^mailto:grievance-in@telegram\.org\?subject=Urgent/);
+  await expect(guide).toContainText('gac.gov.in');
+
+  await page.locator('#d-plat').selectOption('x');
+  await expect(page.getByTestId('open-form')).toHaveAttribute('href', 'https://help.x.com/en/rules-and-policies/x-india');
+  await expect(page.getByTestId('copy-email')).toHaveCount(0);
+  await expect(guide).toContainText('cannot be contacted by email');
+  await page.locator('#d-plat').selectOption('reddit');
+  await expect(page.getByTestId('send-contact')).toContainText('could not confirm');
+
+  await page.getByTestId('tpl-ncrp').click();
+  await expect(guide).toContainText('Report and Track');
+  await expect(guide).toContainText('1930');
+  await expect(guide.getByRole('link', { name: /MHA citizen manual/ })).toHaveAttribute('href', /cybercrime\.gov\.in/);
+  await page.getByTestId('draft-copy-top').click();
+  expect(await clip()).toContain('cybercrime');
+  await page.getByTestId('tpl-police').click();
+  await expect(guide).toContainText('Zero FIR');
+  await expect(guide).toContainText('112');
+
+  await page.goto('/hi/draft/?t=grievance&p=whatsapp');
+  await expect(page.getByTestId('send-guide')).toContainText('इसे कहाँ भेजें');
+  await expect(page.getByTestId('send-email')).toHaveText('grievance_officer_wa@support.whatsapp.com');
 });
 
 test('language switch moves to Hindi routes', async ({ page }) => {
@@ -132,6 +175,7 @@ test('Leave now leaves the site and Back does not return', async ({ page }) => {
 test('Esc leaves the site', async ({ page }) => {
   await blockNeutralSite(page);
   await page.goto('/tracker/');
+  await page.locator('html[data-esc-ready="1"]').waitFor({ state: 'attached' });
   await page.keyboard.press('Escape');
   await page.waitForURL(/google\.com/);
 });

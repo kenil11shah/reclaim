@@ -170,3 +170,10 @@ export const caseSchema = z.object({
   person: z.object({ name: z.string(), age: z.number(), city: z.string() }).optional(),
 });
 export type Case = z.infer<typeof caseSchema>;
+
+const sendGuide = z.object({
+  steps: z.array(bi.extend({ route: z.enum(['email', 'form']).optional() })).min(3),
+  sources: z.array(z.object({ label: z.string(), url })).min(1),
+});
+export const sendStepsSchema = z.object({ ncrp: sendGuide, grievance: sendGuide, police: sendGuide, followup: sendGuide });
+export type SendSteps = z.infer<typeof sendStepsSchema>;

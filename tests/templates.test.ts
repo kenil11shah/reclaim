@@ -34,3 +34,41 @@ describe('complaint templates', () => {
     expect(out).toContain('[add]');
   });
 });
+
+import { splitSubject } from '@content/templates';
+import { platforms } from '@/lib/content';
+import sendStepsRaw from '@content/send-steps.json';
+import { sendStepsSchema } from '@/lib/schemas';
+const sendSteps = sendStepsSchema.parse(sendStepsRaw);
+
+describe('where-to-send guide', () => {
+  it('splits the subject line out of email drafts in both languages', () => {
+    const en = splitSubject(fillTemplate('grievance', base, 'en'));
+    expect(en.subject).toMatch(/^Urgent removal under Rule 3\(2\)\(b\)/);
+    expect(en.body).not.toMatch(/^Subject:/m);
+    expect(en.body).toContain('DEMO-456');
+    const hi = splitSubject(fillTemplate('followup', base, 'hi'));
+    expect(hi.subject).toContain('DEMO-456');
+    expect(hi.body).not.toMatch(/^विषय:/m);
+    expect(splitSubject('no subject here')).toEqual({ subject: '', body: 'no subject here' });
+  });
+  it('has bilingual steps for every template, each citing only government sources', () => {
+    sendStepsSchema.parse(sendSteps);
+    for (const g of Object.values(sendSteps)) {
+      for (const s of g.steps) { expect(s.en).toBeTruthy(); expect(s.hi).toBeTruthy(); }
+      for (const src of g.sources) expect(new URL(src.url).hostname).toMatch(/(^|\.)gov\.in$/);
+    }
+  });
+  it('gives the grievance guide one step for each contact route', () => {
+    const routes = sendSteps.grievance.steps.map((s) => s.route).filter(Boolean);
+    expect(routes.sort()).toEqual(['email', 'form']);
+  });
+  it('every shown grievance contact has a source, and unverified ones show none', () => {
+    for (const p of platforms) {
+      const g = p.grievanceOfficer;
+      if (g.route === 'VERIFY') expect(g.value).toBe('');
+      else { expect(g.value).toBeTruthy(); expect(g.source).toMatch(/^https:\/\//); }
+      if (g.route === 'email') expect(g.value).toMatch(/^[^@\s]+@[^@\s]+\.[a-z]+$/);
+    }
+  });
+});

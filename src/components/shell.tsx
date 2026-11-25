@@ -70,6 +70,7 @@ export function Shell({ children }: { children: ReactNode }) {
       leaveNow();
     };
     window.addEventListener('keydown', onKey);
+    document.documentElement.dataset.escReady = '1';
     return () => window.removeEventListener('keydown', onKey);
   }, [menu]);
 

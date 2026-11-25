@@ -230,3 +230,13 @@ export const officialSites: Record<TemplateId, string | null> = {
   police: null,
   followup: null,
 };
+
+/** Splits a draft into its subject line (if any) and the rest, for email routes. */
+export function splitSubject(text: string): { subject: string; body: string } {
+  const lines = text.split('\n');
+  const i = lines.findIndex((l) => /^\s*(Subject|विषय)\s*:/.test(l));
+  if (i === -1) return { subject: '', body: text.trim() };
+  const subject = lines[i].replace(/^\s*(Subject|विषय)\s*:\s*/, '').trim();
+  const body = [...lines.slice(0, i), ...lines.slice(i + 1)].join('\n').replace(/^\s*\n+/, '').trim();
+  return { subject, body };
+}
