@@ -1,0 +1,69 @@
+{
+  "id": "whatsapp",
+  "name": "WhatsApp",
+  "category": "messaging",
+  "reach": 7,
+  "stopnciiPartner": "no",
+  "reportSteps": [
+    {
+      "en": "Open the chat with the person or group.",
+      "hi": "उस व्यक्ति या ग्रुप की चैट खोलें।"
+    },
+    {
+      "en": "To report one message: long-press it, tap the three dots, then Report.",
+      "hi": "एक मैसेज रिपोर्ट करने के लिए: उसे देर तक दबाएँ, तीन बिंदुओं पर टैप करें, फिर Report।"
+    },
+    {
+      "en": "To report the contact or group: tap their name at the top, scroll down, tap Report.",
+      "hi": "कॉन्टैक्ट या ग्रुप रिपोर्ट करने के लिए: ऊपर नाम पर टैप करें, नीचे स्क्रॉल करें, Report पर टैप करें।"
+    },
+    {
+      "en": "WhatsApp receives a copy of the most recent messages from that chat. The sender is not told.",
+      "hi": "WhatsApp को उस चैट के हाल के मैसेज की कॉपी मिलती है। भेजने वाले को पता नहीं चलता।"
+    },
+    {
+      "en": "Save your evidence first, then block the sender.",
+      "hi": "पहले सबूत सहेजें, फिर भेजने वाले को ब्लॉक करें।"
+    }
+  ],
+  "webForm": {
+    "url": null,
+    "label": {
+      "en": "No NCII web form found. Escalate to the Grievance Officer by email.",
+      "hi": "एनसीआईआई के लिए कोई वेब फ़ॉर्म नहीं मिला। शिकायत अधिकारी को ईमेल करें।"
+    },
+    "needsAccount": "yes"
+  },
+  "email": null,
+  "grievanceOfficer": {
+    "route": "email",
+    "value": "grievance_officer_wa@support.whatsapp.com",
+    "source": "https://gac.gov.in/Home/getSSMIOfficerList"
+  },
+  "policySummary": {
+    "en": "Chats are end-to-end encrypted, so WhatsApp only sees what you report. Hash tools like StopNCII cannot scan encrypted chats.",
+    "hi": "चैट एंड-टू-एंड एन्क्रिप्टेड हैं, इसलिए WhatsApp केवल वही देखता है जो आप रिपोर्ट करते हैं। StopNCII जैसे हैश टूल एन्क्रिप्टेड चैट स्कैन नहीं कर सकते।"
+  },
+  "aiContentCovered": "unclear",
+  "tips": [
+    {
+      "en": "If the content is being forwarded in groups, ask a trusted friend in those groups to report it too.",
+      "hi": "अगर सामग्री ग्रुप में फ़ॉरवर्ड हो रही है, तो उन ग्रुप में किसी भरोसेमंद दोस्त से भी रिपोर्ट करवाएँ।"
+    }
+  ],
+  "sources": [
+    {
+      "label": "WhatsApp Help: How to block and report someone",
+      "url": "https://whatsapp.com/faq/en/iphone/20950271"
+    },
+    {
+      "label": "GAC: list of Grievance Officers of significant social media intermediaries",
+      "url": "https://gac.gov.in/Home/getSSMIOfficerList"
+    },
+    {
+      "label": "StopNCII FAQ",
+      "url": "https://stopncii.org/faq/"
+    }
+  ],
+  "lastVerified": "2026-11-25"
+}

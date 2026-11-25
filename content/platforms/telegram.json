@@ -1,0 +1,73 @@
+{
+  "id": "telegram",
+  "name": "Telegram",
+  "category": "messaging",
+  "reach": 5,
+  "stopnciiPartner": "no",
+  "reportSteps": [
+    {
+      "en": "Open the channel, group, bot or message.",
+      "hi": "चैनल, ग्रुप, बॉट या मैसेज खोलें।"
+    },
+    {
+      "en": "For a channel or group: tap its name, then the three dots, then Report. For a message: long-press it and tap Report.",
+      "hi": "चैनल या ग्रुप के लिए: नाम पर टैप करें, फिर तीन बिंदु, फिर Report। मैसेज के लिए: देर तक दबाएँ और Report पर टैप करें।"
+    },
+    {
+      "en": "Pick the closest reason and describe it as non-consensual intimate content of you.",
+      "hi": "सबसे क़रीबी कारण चुनें और लिखें कि यह बिना सहमति आपकी निजी सामग्री है।"
+    },
+    {
+      "en": "Also email abuse@telegram.org with the public link (t.me/...) and a short description.",
+      "hi": "abuse@telegram.org पर सार्वजनिक लिंक (t.me/...) और छोटा विवरण भी ईमेल करें।"
+    },
+    {
+      "en": "If nothing happens within 2 hours, email Telegram's India Grievance Officer.",
+      "hi": "अगर 2 घंटे में कुछ न हो, तो Telegram के भारत शिकायत अधिकारी को ईमेल करें।"
+    }
+  ],
+  "webForm": {
+    "url": null,
+    "label": {
+      "en": "No web form. Use in-app reporting and email abuse@telegram.org.",
+      "hi": "कोई वेब फ़ॉर्म नहीं। इन-ऐप रिपोर्टिंग और abuse@telegram.org पर ईमेल इस्तेमाल करें।"
+    },
+    "needsAccount": "yes"
+  },
+  "email": "abuse@telegram.org",
+  "grievanceOfficer": {
+    "route": "email",
+    "value": "grievance-in@telegram.org",
+    "source": "https://gac.gov.in/Home/getSSMIOfficerList"
+  },
+  "policySummary": {
+    "en": "Telegram's terms ban illegal pornographic content on publicly viewable channels and bots. They do not mention non-consensual intimate imagery, and BBC research found no dedicated NCII policy.",
+    "hi": "Telegram की शर्तें सार्वजनिक चैनलों और बॉट पर अवैध अश्लील सामग्री पर रोक लगाती हैं। उनमें बिना सहमति निजी तस्वीरों का ज़िक्र नहीं है, और BBC की रिसर्च में कोई अलग एनसीआईआई नीति नहीं मिली।"
+  },
+  "aiContentCovered": "unclear",
+  "tips": [
+    {
+      "en": "Copy the channel's public link (t.me/name) before reporting. It is the most useful evidence.",
+      "hi": "रिपोर्ट करने से पहले चैनल का सार्वजनिक लिंक (t.me/name) कॉपी करें। यह सबसे काम का सबूत है।"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Telegram Terms of Service",
+      "url": "https://telegram.org/tos"
+    },
+    {
+      "label": "BHRRC summary of BBC research on Telegram",
+      "url": "https://business-humanrights.org/zh-hans/最新消息/telegram-allegedly-used-to-harass-shame-blackmail-women-incl-company-comment"
+    },
+    {
+      "label": "The News Minute: Telegram on reporting via abuse@telegram.org",
+      "url": "https://www.thenewsminute.com/amp/story/news/whatsapp-telegram-may-have-child-abuse-videos-too-cyber-security-specialist-101442"
+    },
+    {
+      "label": "GAC: list of Grievance Officers of significant social media intermediaries",
+      "url": "https://gac.gov.in/Home/getSSMIOfficerList"
+    }
+  ],
+  "lastVerified": "2026-11-25"
+}

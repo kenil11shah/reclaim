@@ -1,0 +1,150 @@
+{
+  "id": "case_demo",
+  "demo": true,
+  "createdAt": "2026-11-18T10:05:00+05:30",
+  "answers": {
+    "safety": "no",
+    "about": "me",
+    "what": [
+      "fake"
+    ],
+    "where": [
+      "telegram",
+      "x",
+      "instagram"
+    ],
+    "who": "no",
+    "threat": "no",
+    "when": "today",
+    "lang": "en"
+  },
+  "plan": [
+    {
+      "stepId": "breathe",
+      "done": true
+    },
+    {
+      "stepId": "evidence",
+      "done": true
+    },
+    {
+      "stepId": "report-platform:telegram",
+      "done": true
+    },
+    {
+      "stepId": "report-platform:x",
+      "done": true
+    },
+    {
+      "stepId": "ncrp",
+      "done": true
+    },
+    {
+      "stepId": "stopncii",
+      "done": true
+    }
+  ],
+  "reports": [
+    {
+      "id": "r1",
+      "platform": "x",
+      "reportedAt": "2026-11-18T10:40:00+05:30",
+      "refId": "DEMO-123",
+      "status": "removed",
+      "resolvedAt": "2026-11-19T16:40:00+05:30",
+      "notes": "Removed about 30 hours after the report."
+    },
+    {
+      "id": "r2",
+      "platform": "telegram",
+      "reportedAt": "2026-11-18T11:15:00+05:30",
+      "refId": "DEMO-456",
+      "status": "reported",
+      "resolvedAt": null,
+      "notes": "No reply yet. Also emailed abuse@telegram.org."
+    },
+    {
+      "id": "r3",
+      "platform": "instagram",
+      "reportedAt": null,
+      "refId": "",
+      "status": "not_reported",
+      "resolvedAt": null,
+      "notes": "Repost spotted, not reported yet."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "url": "https://t.me/demo_channel_123/42",
+      "platform": "telegram",
+      "handle": "@demo_channel_123",
+      "seenAt": "2026-11-18T09:50:00+05:30",
+      "notes": "Channel post with the AI-morphed image. Demo data."
+    },
+    {
+      "id": "e2",
+      "url": "https://example.com/demo_post",
+      "platform": "x",
+      "handle": "@demo_fake_handle_x",
+      "seenAt": "2026-11-18T10:20:00+05:30",
+      "notes": "Repost with my name in the caption. Demo data."
+    }
+  ],
+  "timeline": [
+    {
+      "at": "2026-11-18T09:50:00+05:30",
+      "event": {
+        "en": "Found the image in a Telegram channel",
+        "hi": "Telegram चैनल में तस्वीर मिली"
+      }
+    },
+    {
+      "at": "2026-11-18T10:05:00+05:30",
+      "event": {
+        "en": "Built an action plan in Reclaim",
+        "hi": "Reclaim में एक्शन प्लान बनाया"
+      }
+    },
+    {
+      "at": "2026-11-18T10:40:00+05:30",
+      "event": {
+        "en": "Reported on X (DEMO-123)",
+        "hi": "X पर रिपोर्ट की (DEMO-123)"
+      }
+    },
+    {
+      "at": "2026-11-18T11:15:00+05:30",
+      "event": {
+        "en": "Reported on Telegram (DEMO-456)",
+        "hi": "Telegram पर रिपोर्ट की (DEMO-456)"
+      }
+    },
+    {
+      "at": "2026-11-18T12:00:00+05:30",
+      "event": {
+        "en": "Drafted NCRP complaint text",
+        "hi": "NCRP शिकायत का टेक्स्ट तैयार किया"
+      }
+    },
+    {
+      "at": "2026-11-18T12:30:00+05:30",
+      "event": {
+        "en": "Used StopNCII.org on own phone",
+        "hi": "अपने फ़ोन पर StopNCII.org इस्तेमाल किया"
+      }
+    },
+    {
+      "at": "2026-11-19T16:40:00+05:30",
+      "event": {
+        "en": "X removed the post, 28 hours after the 2-hour deadline",
+        "hi": "X ने पोस्ट हटाई, 2 घंटे की समय-सीमा के 28 घंटे बाद"
+      }
+    }
+  ],
+  "person": {
+    "name": "Ananya S.",
+    "age": 21,
+    "city": "Pune"
+  }
+}

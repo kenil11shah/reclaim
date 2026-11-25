@@ -1,0 +1,120 @@
+[
+  {
+    "id": "i-2026-09-ttp-csam-ads",
+    "date": "2026-09-08",
+    "platforms": [
+      "facebook",
+      "instagram"
+    ],
+    "title": "Meta ran hundreds of ads with AI-generated child abuse imagery",
+    "summary": "The Tech Transparency Project reported that Meta failed to detect 332 ads containing AI-generated child sexual abuse material, many promoting nudify apps.",
+    "sourceLabel": "OECD AI Incidents Monitor",
+    "source": "https://oecd.ai/en/incidents/2026-09-08-faa7",
+    "scored": true,
+    "note": "Counts against C8 for Facebook and Instagram."
+  },
+  {
+    "id": "i-2026-07-isd",
+    "date": "2026-07-14",
+    "platforms": [
+      "youtube",
+      "x",
+      "reddit",
+      "facebook"
+    ],
+    "title": "ISD maps the nudify tools ecosystem",
+    "summary": "The Institute for Strategic Dialogue found mainstream platforms sent millions of users to nudify apps between Dec 2025 and Mar 2026, with YouTube, X, Reddit and Facebook as the main sources.",
+    "sourceLabel": "OECD AI Incidents Monitor (ISD report)",
+    "source": "https://oecd.ai/en/incidents/2026-07-14-a0d6",
+    "scored": true,
+    "note": "Counts against C8 for YouTube, X, Reddit and Facebook."
+  },
+  {
+    "id": "i-2026-07-ttp-nudify-ads",
+    "date": "2026-07-27",
+    "platforms": [
+      "facebook",
+      "instagram"
+    ],
+    "title": "Thousands of nudify-app ads on Facebook and Instagram",
+    "summary": "A Tech Transparency Project report found more than 7,600 ads for apps built to produce non-consensual imagery of women, placed through one advertising partner.",
+    "sourceLabel": "The Next Web",
+    "source": "https://thenextweb.com/news/meta-ai-nudify-ads-china",
+    "scored": true,
+    "note": "Counts against C8 for Facebook and Instagram."
+  },
+  {
+    "id": "i-2026-06-telegram-mha",
+    "date": "2026-06-23",
+    "platforms": [
+      "telegram"
+    ],
+    "title": "Government report flags harassment and abuse content on Telegram",
+    "summary": "A June 2026 Indian government report reviewed by Reuters said Telegram channels were reported by citizens for online harassment and child sexual abuse content.",
+    "sourceLabel": "The Star (Reuters)",
+    "source": "https://www.thestar.com.my/tech/tech-news/2026/06/23/india-039proactively-monitoring039-telegram-over-concerns-about-illegal-content-government-report-shows",
+    "scored": true,
+    "note": "Counts against C8 for Telegram."
+  },
+  {
+    "id": "i-2026-06-telegram-block",
+    "date": "2026-06-19",
+    "platforms": [
+      "telegram"
+    ],
+    "title": "Delhi High Court upholds temporary Telegram block",
+    "summary": "India blocked Telegram until 22 June 2026 over leaked NEET-UG exam papers, and the Delhi High Court upheld the block.",
+    "sourceLabel": "Al Jazeera",
+    "source": "https://aljazeera.com/news/2026/6/19/indian-court-rejects-appeal-over-ban-on-telegram-app",
+    "scored": false,
+    "note": "Not NCII-related, so not scored."
+  },
+  {
+    "id": "i-2026-02-it-rules",
+    "date": "2026-02-10",
+    "platforms": [],
+    "title": "IT Rules amendment cuts NCII takedown to 2 hours",
+    "summary": "MeitY introduced amendments, in force 20 Feb 2026: NCII and morphed images must come down within 2 hours, AI content must be labelled, and court or government orders must be met within 3 hours.",
+    "sourceLabel": "Freshfields",
+    "source": "https://www.freshfields.com/en/our-thinking/blogs/technology-quotient/india-targets-deepfakes-and-ai-generated-content-key-changes-under-meitys-2026-102mjwn",
+    "scored": false,
+    "note": "Law change, not a platform failure."
+  },
+  {
+    "id": "i-2026-01-ofcom-x",
+    "date": "2026-01-12",
+    "platforms": [
+      "x"
+    ],
+    "title": "Ofcom opens formal investigation into X over Grok images",
+    "summary": "The UK regulator opened an Online Safety Act investigation after reports that Grok was used to create and share undressed images of people.",
+    "sourceLabel": "Ofcom",
+    "source": "https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/ofcom-launches-investigation-into-x-over-grok-sexualised-imagery",
+    "scored": true,
+    "note": "Counts against C8 for X."
+  },
+  {
+    "id": "i-2026-01-meity-grok",
+    "date": "2026-01-02",
+    "platforms": [
+      "x"
+    ],
+    "title": "MeitY notice to X over Grok 'undressing' images",
+    "summary": "MeitY issued a notice on 2 January 2026; X removed about 3,500 posts and 600 accounts.",
+    "sourceLabel": "Inc42",
+    "source": "https://inc42.com/?p=544596",
+    "scored": true,
+    "note": "Counts against C8 for X."
+  },
+  {
+    "id": "i-2025-11-sop",
+    "date": "2025-11-11",
+    "platforms": [],
+    "title": "MeitY issues the NCII Standard Operating Procedure",
+    "summary": "Issued after a Madras High Court order, the SOP lists reporting routes and requires large platforms to use hash-matching and crawlers.",
+    "sourceLabel": "PIB release",
+    "source": "https://negd.gov.in/wp-content/uploads/2025/11/Press-Release_Press-Information-Bureau2-1.pdf",
+    "scored": false,
+    "note": "Policy change, not a platform failure."
+  }
+]

@@ -1,0 +1,61 @@
+{
+  "id": "reddit",
+  "name": "Reddit",
+  "category": "forum",
+  "reach": 6,
+  "stopnciiPartner": "listed",
+  "reportSteps": [
+    {
+      "en": "Tap the three dots or Report under the post or comment.",
+      "hi": "पोस्ट या कमेंट के नीचे तीन बिंदु या Report पर टैप करें।"
+    },
+    {
+      "en": "Choose 'Non-consensual intimate media'.",
+      "hi": "'Non-consensual intimate media' चुनें।"
+    },
+    {
+      "en": "Say who is shown in the media, then submit.",
+      "hi": "बताएँ कि सामग्री में कौन है, फिर सबमिट करें।"
+    },
+    {
+      "en": "You can also use the reporting page linked from Reddit's policy article.",
+      "hi": "आप Reddit के नीति लेख से जुड़ा रिपोर्टिंग पेज भी इस्तेमाल कर सकते हैं।"
+    }
+  ],
+  "webForm": {
+    "url": "https://support.reddithelp.com/hc/en-us/articles/360043513411-Never-Post-Intimate-or-Sexually-Explicit-Media-of-Someone-Without-Their-Consent",
+    "label": {
+      "en": "Reporting page linked from Reddit's Rule 3 article",
+      "hi": "Reddit के नियम 3 लेख से जुड़ा रिपोर्टिंग पेज"
+    },
+    "needsAccount": "unknown"
+  },
+  "email": null,
+  "grievanceOfficer": {
+    "route": "VERIFY",
+    "value": "",
+    "source": "VERIFY"
+  },
+  "policySummary": {
+    "en": "Reddit's Rule 3 bans intimate or sexually explicit media posted without consent, including depictions that may have been AI-generated or faked.",
+    "hi": "Reddit का नियम 3 बिना सहमति पोस्ट की गई निजी या यौन सामग्री पर रोक लगाता है, जिसमें एआई से बनी या नकली सामग्री भी शामिल है।"
+  },
+  "aiContentCovered": "yes",
+  "tips": [
+    {
+      "en": "Report the subreddit too if it exists to share this kind of content.",
+      "hi": "अगर कोई सबरेडिट इसी तरह की सामग्री के लिए है तो उसे भी रिपोर्ट करें।"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Reddit Help: Rule 3, non-consensual intimate media",
+      "url": "https://support.reddithelp.com/hc/en-us/articles/360043513411-Never-Post-Intimate-or-Sexually-Explicit-Media-of-Someone-Without-Their-Consent"
+    },
+    {
+      "label": "StopNCII industry partners",
+      "url": "https://stopncii.org/partners/industry-partners/"
+    }
+  ],
+  "lastVerified": "2026-11-25"
+}

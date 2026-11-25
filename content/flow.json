@@ -1,0 +1,650 @@
+{
+  "questions": [
+    {
+      "id": "safety",
+      "type": "single",
+      "title": {
+        "en": "Are you in danger right now?",
+        "hi": "क्या आप अभी ख़तरे में हैं?"
+      },
+      "help": {
+        "en": "If someone is threatening to hurt you, call 112 first.",
+        "hi": "अगर कोई आपको नुकसान पहुँचाने की धमकी दे रहा है, तो पहले 112 पर कॉल करें।"
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "en": "Yes, I am in danger",
+            "hi": "हाँ, मैं ख़तरे में हूँ"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "en": "No, I am safe right now",
+            "hi": "नहीं, मैं अभी सुरक्षित हूँ"
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "type": "single",
+      "title": {
+        "en": "Who is this about?",
+        "hi": "यह किसके बारे में है?"
+      },
+      "help": {
+        "en": "You can use Reclaim for yourself or to help someone else.",
+        "hi": "आप Reclaim अपने लिए या किसी और की मदद के लिए इस्तेमाल कर सकते हैं।"
+      },
+      "options": [
+        {
+          "value": "me",
+          "label": {
+            "en": "Me",
+            "hi": "मेरे बारे में"
+          }
+        },
+        {
+          "value": "helper",
+          "label": {
+            "en": "Someone I am helping",
+            "hi": "जिसकी मैं मदद कर रहा/रही हूँ"
+          }
+        },
+        {
+          "value": "minor",
+          "label": {
+            "en": "The person shown is under 18",
+            "hi": "जो व्यक्ति दिख रहा है वह 18 से कम है"
+          }
+        }
+      ]
+    },
+    {
+      "id": "what",
+      "type": "multi",
+      "title": {
+        "en": "What happened?",
+        "hi": "क्या हुआ?"
+      },
+      "help": {
+        "en": "Pick all that apply.",
+        "hi": "जो भी लागू हों, सब चुनें।"
+      },
+      "options": [
+        {
+          "value": "real",
+          "label": {
+            "en": "A real private photo or video was shared",
+            "hi": "असली निजी फ़ोटो या वीडियो साझा किया गया"
+          }
+        },
+        {
+          "value": "fake",
+          "label": {
+            "en": "A fake or AI-made image was created",
+            "hi": "नकली या एआई से बनी तस्वीर बनाई गई"
+          }
+        },
+        {
+          "value": "threat",
+          "label": {
+            "en": "Someone is threatening to share images or asking for money",
+            "hi": "कोई तस्वीरें फैलाने की धमकी दे रहा है या पैसे माँग रहा है"
+          }
+        },
+        {
+          "value": "filmed",
+          "label": {
+            "en": "I was secretly filmed",
+            "hi": "मुझे छिपकर रिकॉर्ड किया गया"
+          }
+        }
+      ]
+    },
+    {
+      "id": "where",
+      "type": "multi",
+      "title": {
+        "en": "Where is it?",
+        "hi": "यह कहाँ है?"
+      },
+      "help": {
+        "en": "Pick every place you have seen it. You can add more later.",
+        "hi": "हर वह जगह चुनें जहाँ आपने इसे देखा। बाद में और जोड़ सकते हैं।"
+      },
+      "options": [
+        {
+          "value": "instagram",
+          "label": {
+            "en": "Instagram",
+            "hi": "Instagram"
+          }
+        },
+        {
+          "value": "facebook",
+          "label": {
+            "en": "Facebook",
+            "hi": "Facebook"
+          }
+        },
+        {
+          "value": "whatsapp",
+          "label": {
+            "en": "WhatsApp",
+            "hi": "WhatsApp"
+          }
+        },
+        {
+          "value": "telegram",
+          "label": {
+            "en": "Telegram",
+            "hi": "Telegram"
+          }
+        },
+        {
+          "value": "x",
+          "label": {
+            "en": "X",
+            "hi": "X"
+          }
+        },
+        {
+          "value": "reddit",
+          "label": {
+            "en": "Reddit",
+            "hi": "Reddit"
+          }
+        },
+        {
+          "value": "youtube",
+          "label": {
+            "en": "YouTube",
+            "hi": "YouTube"
+          }
+        },
+        {
+          "value": "google-search",
+          "label": {
+            "en": "Google Search",
+            "hi": "Google Search"
+          }
+        },
+        {
+          "value": "other",
+          "label": {
+            "en": "Another website",
+            "hi": "कोई दूसरी वेबसाइट"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "en": "I don't know yet",
+            "hi": "अभी पता नहीं"
+          }
+        }
+      ]
+    },
+    {
+      "id": "who",
+      "type": "single",
+      "title": {
+        "en": "Do you know who did it?",
+        "hi": "क्या आप जानते हैं कि यह किसने किया?"
+      },
+      "help": {
+        "en": "This only changes the advice. You never have to name anyone here.",
+        "hi": "इससे केवल सलाह बदलती है। आपको यहाँ किसी का नाम नहीं बताना है।"
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "en": "Yes",
+            "hi": "हाँ"
+          }
+        },
+        {
+          "value": "suspect",
+          "label": {
+            "en": "I suspect someone",
+            "hi": "मुझे किसी पर शक है"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "en": "No",
+            "hi": "नहीं"
+          }
+        }
+      ]
+    },
+    {
+      "id": "threat",
+      "type": "single",
+      "title": {
+        "en": "Is anyone threatening you or asking for money?",
+        "hi": "क्या कोई आपको धमका रहा है या पैसे माँग रहा है?"
+      },
+      "help": {
+        "en": "This is called sextortion. It is a crime, and it is not your fault.",
+        "hi": "इसे सेक्सटॉर्शन कहते हैं। यह अपराध है, और इसमें आपकी कोई ग़लती नहीं है।"
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "en": "Yes",
+            "hi": "हाँ"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "en": "No",
+            "hi": "नहीं"
+          }
+        }
+      ]
+    },
+    {
+      "id": "when",
+      "type": "single",
+      "title": {
+        "en": "When did you find it?",
+        "hi": "आपको यह कब पता चला?"
+      },
+      "help": {
+        "en": "There is no time limit to report. The 2-hour rule starts when you complain.",
+        "hi": "रिपोर्ट करने की कोई समय-सीमा नहीं है। 2 घंटे का नियम आपकी शिकायत से शुरू होता है।"
+      },
+      "options": [
+        {
+          "value": "today",
+          "label": {
+            "en": "Today",
+            "hi": "आज"
+          }
+        },
+        {
+          "value": "week",
+          "label": {
+            "en": "This week",
+            "hi": "इस हफ़्ते"
+          }
+        },
+        {
+          "value": "earlier",
+          "label": {
+            "en": "Earlier",
+            "hi": "इससे पहले"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lang",
+      "type": "single",
+      "title": {
+        "en": "Which language should your plan be in?",
+        "hi": "आपका प्लान किस भाषा में हो?"
+      },
+      "help": {
+        "en": "You can switch any time from the top of the page.",
+        "hi": "आप कभी भी पेज के ऊपर से भाषा बदल सकते हैं।"
+      },
+      "options": [
+        {
+          "value": "en",
+          "label": {
+            "en": "English",
+            "hi": "English"
+          }
+        },
+        {
+          "value": "hi",
+          "label": {
+            "en": "हिन्दी (Hindi)",
+            "hi": "हिन्दी"
+          }
+        }
+      ]
+    }
+  ],
+  "sextortionCard": {
+    "title": {
+      "en": "If someone is threatening you",
+      "hi": "अगर कोई आपको धमका रहा है"
+    },
+    "points": [
+      {
+        "en": "Do not pay. Paying usually leads to more demands.",
+        "hi": "पैसे न दें। पैसे देने से अक्सर और माँगें आती हैं।"
+      },
+      {
+        "en": "Do not delete the chat. It is your evidence.",
+        "hi": "चैट डिलीट न करें। यह आपका सबूत है।"
+      },
+      {
+        "en": "Save screenshots of the messages, profile and any payment details they sent.",
+        "hi": "मैसेज, प्रोफ़ाइल और उनके भेजे भुगतान विवरण के स्क्रीनशॉट सहेजें।"
+      },
+      {
+        "en": "Then block them and report the account.",
+        "hi": "फिर उन्हें ब्लॉक करें और अकाउंट रिपोर्ट करें।"
+      },
+      {
+        "en": "Report to cybercrime.gov.in or call 1930.",
+        "hi": "cybercrime.gov.in पर रिपोर्ट करें या 1930 पर कॉल करें।"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "id": "breathe",
+      "when": {},
+      "title": {
+        "en": "Breathe. It is not your fault.",
+        "hi": "गहरी साँस लें। इसमें आपकी कोई ग़लती नहीं है।"
+      },
+      "body": {
+        "en": "The person who shared or made this content broke the law. Indian law is on your side, and you can act today. Go at your own pace.",
+        "hi": "जिसने यह सामग्री बनाई या फैलाई, उसने क़ानून तोड़ा है। भारतीय क़ानून आपके साथ है, और आप आज ही कदम उठा सकते हैं। अपनी रफ़्तार से चलें।"
+      },
+      "cta": {
+        "label": {
+          "en": "Read: first emotional steps",
+          "hi": "पढ़ें: पहले भावनात्मक कदम"
+        },
+        "href": "/learn/not-your-fault"
+      }
+    },
+    {
+      "id": "helper",
+      "when": {
+        "aboutIn": [
+          "helper"
+        ]
+      },
+      "title": {
+        "en": "Let them lead",
+        "hi": "उन्हें फ़ैसला लेने दें"
+      },
+      "body": {
+        "en": "Ask what they want before you act. Never forward or re-share the content, even to show someone. Offer to do the reporting with them.",
+        "hi": "कुछ भी करने से पहले पूछें कि वे क्या चाहते हैं। सामग्री कभी फ़ॉरवर्ड या दोबारा साझा न करें, किसी को दिखाने के लिए भी नहीं। रिपोर्टिंग में साथ देने की पेशकश करें।"
+      },
+      "cta": {
+        "label": {
+          "en": "Read: how to help a friend",
+          "hi": "पढ़ें: दोस्त की मदद कैसे करें"
+        },
+        "href": "/learn/how-to-help"
+      }
+    },
+    {
+      "id": "timing",
+      "when": {
+        "whenIn": [
+          "earlier"
+        ]
+      },
+      "title": {
+        "en": "It is not too late",
+        "hi": "अभी देर नहीं हुई"
+      },
+      "body": {
+        "en": "You can report content that was posted weeks or months ago. The platform's 2-hour deadline starts from your complaint, not from when it was posted.",
+        "hi": "आप हफ़्तों या महीनों पहले पोस्ट की गई सामग्री भी रिपोर्ट कर सकते हैं। प्लेटफ़ॉर्म की 2 घंटे की समय-सीमा आपकी शिकायत से शुरू होती है, पोस्ट होने से नहीं।"
+      }
+    },
+    {
+      "id": "sextortion",
+      "when": {
+        "threatOrWhat": true
+      },
+      "title": {
+        "en": "Someone is threatening you: do not pay",
+        "hi": "कोई आपको धमका रहा है: पैसे न दें"
+      },
+      "body": {
+        "en": "Do not pay and do not delete the chat. Save screenshots, then block and report the account. Threats and money demands are crimes under BNS sections 351 and 308.",
+        "hi": "पैसे न दें और चैट डिलीट न करें। स्क्रीनशॉट सहेजें, फिर अकाउंट ब्लॉक और रिपोर्ट करें। धमकी और पैसे माँगना BNS की धारा 351 और 308 के तहत अपराध है।"
+      },
+      "cta": {
+        "label": {
+          "en": "Read: sextortion",
+          "hi": "पढ़ें: सेक्सटॉर्शन"
+        },
+        "href": "/learn/sextortion"
+      }
+    },
+    {
+      "id": "evidence",
+      "when": {},
+      "title": {
+        "en": "Save evidence safely",
+        "hi": "सबूत सुरक्षित रूप से सहेजें"
+      },
+      "body": {
+        "en": "Write down the link, the account handle, the platform and when you saw it. Screenshot the page for your own records and keep it private. Never forward the content.",
+        "hi": "लिंक, अकाउंट हैंडल, प्लेटफ़ॉर्म और कब देखा, यह लिख लें। अपने रिकॉर्ड के लिए पेज का स्क्रीनशॉट लें और उसे निजी रखें। सामग्री कभी फ़ॉरवर्ड न करें।"
+      },
+      "cta": {
+        "label": {
+          "en": "Open the evidence kit",
+          "hi": "सबूत किट खोलें"
+        },
+        "href": "/evidence"
+      }
+    },
+    {
+      "id": "known-person",
+      "when": {
+        "whoIn": [
+          "yes",
+          "suspect"
+        ]
+      },
+      "title": {
+        "en": "If you know who did it",
+        "hi": "अगर आप जानते हैं कि किसने किया"
+      },
+      "body": {
+        "en": "Do not confront them, as it can make things worse. Write down what you know. You can name them in your cybercrime or police complaint if you feel safe doing so.",
+        "hi": "उनसे सामना न करें, इससे हालात बिगड़ सकते हैं। जो पता है वह लिख लें। अगर सुरक्षित महसूस करें तो साइबरक्राइम या पुलिस शिकायत में उनका नाम ले सकते हैं।"
+      }
+    },
+    {
+      "id": "report-platform",
+      "when": {
+        "hasPlatforms": true
+      },
+      "title": {
+        "en": "Report on {platform}",
+        "hi": "{platform} पर रिपोर्ट करें"
+      },
+      "body": {
+        "en": "Follow the exact steps for {platform}. Note the time you report: the 2-hour deadline starts then.",
+        "hi": "{platform} के सटीक कदम अपनाएँ। रिपोर्ट करने का समय नोट करें: 2 घंटे की समय-सीमा तभी से शुरू होती है।"
+      },
+      "cta": {
+        "label": {
+          "en": "Open the {platform} guide",
+          "hi": "{platform} गाइड खोलें"
+        },
+        "href": "/platforms/{id}"
+      }
+    },
+    {
+      "id": "other-site",
+      "when": {
+        "whereAny": [
+          "other"
+        ]
+      },
+      "title": {
+        "en": "Report on the other website",
+        "hi": "दूसरी वेबसाइट पर रिपोर्ट करें"
+      },
+      "body": {
+        "en": "Look for a 'Report', 'Abuse' or 'Contact' link on the site. Write down the URL in your evidence log, then ask Google to remove it from Search (step below).",
+        "hi": "साइट पर 'Report', 'Abuse' या 'Contact' लिंक ढूँढें। URL अपने सबूत लॉग में लिखें, फिर Google से उसे सर्च से हटाने को कहें (नीचे का कदम)।"
+      }
+    },
+    {
+      "id": "unknown-where",
+      "when": {
+        "whereAny": [
+          "unknown"
+        ]
+      },
+      "title": {
+        "en": "Not sure where it is yet?",
+        "hi": "अभी पक्का नहीं कि कहाँ है?"
+      },
+      "body": {
+        "en": "Searching for it again and again can be painful. Ask someone you trust to look for you and note the links. You can add platforms to your case later.",
+        "hi": "बार-बार ढूँढना तकलीफ़देह हो सकता है। किसी भरोसेमंद व्यक्ति से ढूँढने और लिंक नोट करने को कहें। आप बाद में अपने केस में प्लेटफ़ॉर्म जोड़ सकते हैं।"
+      }
+    },
+    {
+      "id": "ncrp",
+      "when": {},
+      "title": {
+        "en": "File a complaint on cybercrime.gov.in or call 1930",
+        "hi": "cybercrime.gov.in पर शिकायत करें या 1930 पर कॉल करें"
+      },
+      "body": {
+        "en": "This creates an official record with the police cyber cell. Reclaim drafts the text for you to paste.",
+        "hi": "इससे पुलिस साइबर सेल के पास आधिकारिक रिकॉर्ड बनता है। Reclaim आपके लिए पेस्ट करने लायक़ टेक्स्ट तैयार करता है।"
+      },
+      "cta": {
+        "label": {
+          "en": "Draft my complaint",
+          "hi": "मेरी शिकायत तैयार करें"
+        },
+        "href": "/draft?t=ncrp"
+      }
+    },
+    {
+      "id": "grievance",
+      "when": {
+        "hasPlatforms": true
+      },
+      "title": {
+        "en": "No action in 2 hours? Escalate to the Grievance Officer",
+        "hi": "2 घंटे में कार्रवाई नहीं? शिकायत अधिकारी तक ले जाएँ"
+      },
+      "body": {
+        "en": "Every large platform must have an India Grievance Officer. If your report is not acted on within 2 hours, write to them and cite Rule 3(2)(b).",
+        "hi": "हर बड़े प्लेटफ़ॉर्म का भारत में शिकायत अधिकारी होना ज़रूरी है। अगर 2 घंटे में आपकी रिपोर्ट पर कार्रवाई न हो, तो उन्हें लिखें और नियम 3(2)(b) का हवाला दें।"
+      },
+      "cta": {
+        "label": {
+          "en": "Draft an escalation",
+          "hi": "एस्केलेशन तैयार करें"
+        },
+        "href": "/draft?t=grievance"
+      }
+    },
+    {
+      "id": "stopncii",
+      "when": {
+        "aboutIn": [
+          "me",
+          "helper"
+        ],
+        "whatAny": [
+          "real",
+          "fake",
+          "filmed"
+        ]
+      },
+      "title": {
+        "en": "Block re-uploads with StopNCII.org",
+        "hi": "StopNCII.org से दोबारा अपलोड रोकें"
+      },
+      "body": {
+        "en": "If you have the image on your device and you are over 18 in it, StopNCII makes a digital fingerprint on your phone and shares only that with partner platforms. It does not work on WhatsApp or Telegram chats.",
+        "hi": "अगर तस्वीर आपके डिवाइस पर है और उसमें आप 18 से ऊपर हैं, तो StopNCII आपके फ़ोन पर डिजिटल फ़िंगरप्रिंट बनाता है और केवल वही पार्टनर प्लेटफ़ॉर्म से साझा करता है। यह WhatsApp या Telegram चैट पर काम नहीं करता।"
+      },
+      "cta": {
+        "label": {
+          "en": "Read how StopNCII works",
+          "hi": "पढ़ें StopNCII कैसे काम करता है"
+        },
+        "href": "/learn/stopncii"
+      }
+    },
+    {
+      "id": "google",
+      "when": {
+        "whatAny": [
+          "real",
+          "fake",
+          "filmed"
+        ]
+      },
+      "title": {
+        "en": "Ask Google to remove it from Search",
+        "hi": "Google से इसे सर्च से हटाने को कहें"
+      },
+      "body": {
+        "en": "Even after a site removes it, copies can show up in search. Google has a short flow for 'It shows a sexual image of me'.",
+        "hi": "साइट से हटने के बाद भी कॉपी सर्च में दिख सकती हैं। Google के पास 'It shows a sexual image of me' के लिए छोटा तरीक़ा है।"
+      },
+      "cta": {
+        "label": {
+          "en": "Open the Google Search guide",
+          "hi": "Google सर्च गाइड खोलें"
+        },
+        "href": "/platforms/google-search"
+      }
+    },
+    {
+      "id": "police",
+      "when": {},
+      "optional": true,
+      "title": {
+        "en": "Optional: file a police complaint or FIR",
+        "hi": "वैकल्पिक: पुलिस शिकायत या FIR दर्ज करें"
+      },
+      "body": {
+        "en": "You can also go to your local police station. Reclaim drafts a letter listing the facts, your evidence and the relevant sections.",
+        "hi": "आप स्थानीय पुलिस स्टेशन भी जा सकते हैं। Reclaim तथ्यों, सबूतों और संबंधित धाराओं वाला पत्र तैयार करता है।"
+      },
+      "cta": {
+        "label": {
+          "en": "Draft a police letter",
+          "hi": "पुलिस पत्र तैयार करें"
+        },
+        "href": "/draft?t=police"
+      }
+    },
+    {
+      "id": "support",
+      "when": {},
+      "title": {
+        "en": "Get support",
+        "hi": "सहायता लें"
+      },
+      "body": {
+        "en": "You do not have to do this alone. Talk to someone you trust, or call Tele-MANAS on 14416 for free, confidential support.",
+        "hi": "आपको यह अकेले नहीं करना है। किसी भरोसेमंद से बात करें, या मुफ़्त, गोपनीय सहायता के लिए टेली-मानस 14416 पर कॉल करें।"
+      },
+      "cta": {
+        "label": {
+          "en": "See helplines",
+          "hi": "हेल्पलाइन देखें"
+        },
+        "href": "/support"
+      }
+    }
+  ]
+}

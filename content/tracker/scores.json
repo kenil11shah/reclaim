@@ -1,0 +1,434 @@
+[
+  {
+    "platform": "facebook",
+    "reviewed": "2026-11-25",
+    "criteria": {
+      "C1": {
+        "points": 15,
+        "evidence": "Meta's policy bans NCII 'whether it's real or AI-generated'.",
+        "source": "https://about.fb.com/news/2025/06/taking-action-against-nudify-apps/",
+        "checked": "2026-11-18"
+      },
+      "C2": {
+        "points": 8,
+        "evidence": "Meta says it has a dedicated reporting option for private images. Whether a web form works without an account was not confirmed, so this is scored as in-app (a lower bound).",
+        "source": "https://www.meta.com/en-gb/safety/topics/bullying-harassment/ncii/",
+        "checked": "2026-11-25"
+      },
+      "C3": {
+        "points": null,
+        "evidence": "Not assessed: needs a hands-on walkthrough or published step list.",
+        "source": null,
+        "checked": null
+      },
+      "C4": {
+        "points": 15,
+        "evidence": "Linked as an industry partner on the StopNCII partners page.",
+        "source": "https://stopncii.org/partners/industry-partners/",
+        "checked": "2026-11-25"
+      },
+      "C5": {
+        "points": 10,
+        "evidence": "Grievance Officer web form listed on the government's GAC list of grievance officers.",
+        "source": "https://gac.gov.in/Home/getSSMIOfficerList",
+        "checked": "2026-11-25"
+      },
+      "C6": {
+        "points": null,
+        "evidence": "Not assessed: visible AI labelling under the 2026 rules has not been checked yet.",
+        "source": null,
+        "checked": null
+      },
+      "C7": {
+        "points": 4,
+        "evidence": "Publishes monthly India reports under the IT Rules with content and grievance numbers by policy area, not NCII-specific figures.",
+        "source": "https://transparency.meta.com/sr/india-monthly-report-May31-2024",
+        "checked": "2026-11-25"
+      },
+      "C8": {
+        "points": 0,
+        "evidence": "Three documented failures: Tech Transparency Project found 7,600+ nudify-app ads (July 2026); TTP found 332 ads with AI-generated child abuse imagery, many promoting nudify apps (Sept 2026); ISD found Facebook among the main sources of traffic to nudify tools (July 2026). 15 - 15 = 0.",
+        "source": "https://thenextweb.com/news/meta-ai-nudify-ads-china",
+        "checked": "2026-11-25"
+      }
+    }
+  },
+  {
+    "platform": "instagram",
+    "reviewed": "2026-11-25",
+    "criteria": {
+      "C1": {
+        "points": 15,
+        "evidence": "Meta's policy bans NCII 'whether it's real or AI-generated'.",
+        "source": "https://about.fb.com/news/2025/06/taking-action-against-nudify-apps/",
+        "checked": "2026-11-18"
+      },
+      "C2": {
+        "points": 8,
+        "evidence": "Meta says it has a dedicated reporting option for private images. Whether a web form works without an account was not confirmed, so this is scored as in-app (a lower bound).",
+        "source": "https://www.meta.com/en-gb/safety/topics/bullying-harassment/ncii/",
+        "checked": "2026-11-25"
+      },
+      "C3": {
+        "points": null,
+        "evidence": "Not assessed: needs a hands-on walkthrough or published step list.",
+        "source": null,
+        "checked": null
+      },
+      "C4": {
+        "points": 15,
+        "evidence": "Linked as an industry partner on the StopNCII partners page.",
+        "source": "https://stopncii.org/partners/industry-partners/",
+        "checked": "2026-11-25"
+      },
+      "C5": {
+        "points": 10,
+        "evidence": "Grievance Officer web form listed on the government's GAC list of grievance officers.",
+        "source": "https://gac.gov.in/Home/getSSMIOfficerList",
+        "checked": "2026-11-25"
+      },
+      "C6": {
+        "points": null,
+        "evidence": "Not assessed: visible AI labelling under the 2026 rules has not been checked yet.",
+        "source": null,
+        "checked": null
+      },
+      "C7": {
+        "points": 4,
+        "evidence": "Publishes monthly India reports under the IT Rules with content and grievance numbers by policy area, not NCII-specific figures.",
+        "source": "https://transparency.meta.com/sr/india-monthly-report-May31-2024",
+        "checked": "2026-11-25"
+      },
+      "C8": {
+        "points": 5,
+        "evidence": "Two documented failures: TTP found 7,600+ nudify-app ads across Facebook and Instagram (July 2026) and 332 AI child-abuse-imagery ads across Meta apps (Sept 2026). 15 - 10 = 5.",
+        "source": "https://oecd.ai/en/incidents/2026-09-08-faa7",
+        "checked": "2026-11-25"
+      }
+    }
+  },
+  {
+    "platform": "whatsapp",
+    "reviewed": "2026-11-25",
+    "criteria": {
+      "C1": {
+        "points": null,
+        "evidence": "Not assessed: WhatsApp's own NCII policy wording not yet checked.",
+        "source": null,
+        "checked": null
+      },
+      "C2": {
+        "points": 3,
+        "evidence": "Generic report for messages, contacts and groups, which sends recent messages to WhatsApp. No NCII-specific option found.",
+        "source": "https://whatsapp.com/faq/en/iphone/20950271",
+        "checked": "2026-11-25"
+      },
+      "C3": {
+        "points": null,
+        "evidence": "Not assessed: needs a hands-on walkthrough or published step list.",
+        "source": null,
+        "checked": null
+      },
+      "C4": {
+        "points": 0,
+        "evidence": "Not on the StopNCII partners page. StopNCII says hashing does not work on encrypted messaging apps.",
+        "source": "https://stopncii.org/faq/",
+        "checked": "2026-11-25"
+      },
+      "C5": {
+        "points": 10,
+        "evidence": "Grievance Officer email listed on the government's GAC list.",
+        "source": "https://gac.gov.in/Home/getSSMIOfficerList",
+        "checked": "2026-11-25"
+      },
+      "C6": {
+        "points": null,
+        "evidence": "Not assessed: visible AI labelling under the 2026 rules has not been checked yet.",
+        "source": null,
+        "checked": null
+      },
+      "C7": {
+        "points": null,
+        "evidence": "Not assessed: no NCII-specific transparency source checked yet.",
+        "source": null,
+        "checked": null
+      },
+      "C8": {
+        "points": null,
+        "evidence": "Not assessed: no search for WhatsApp-specific NCII enforcement actions done yet.",
+        "source": null,
+        "checked": null
+      }
+    }
+  },
+  {
+    "platform": "telegram",
+    "reviewed": "2026-11-25",
+    "criteria": {
+      "C1": {
+        "points": 8,
+        "evidence": "No dedicated NCII policy (BBC research). Terms of Service ban illegal pornographic content on publicly viewable channels and bots, and do not mention NCII.",
+        "source": "https://telegram.org/tos",
+        "checked": "2026-11-25"
+      },
+      "C2": {
+        "points": 3,
+        "evidence": "In-app report with general reasons, plus the abuse@telegram.org email. No NCII-specific route.",
+        "source": "https://www.thenewsminute.com/amp/story/news/whatsapp-telegram-may-have-child-abuse-videos-too-cyber-security-specialist-101442",
+        "checked": "2026-11-18"
+      },
+      "C3": {
+        "points": null,
+        "evidence": "Not assessed: needs a hands-on walkthrough or published step list.",
+        "source": null,
+        "checked": null
+      },
+      "C4": {
+        "points": 0,
+        "evidence": "Not on the StopNCII partners page.",
+        "source": "https://stopncii.org/partners/industry-partners/",
+        "checked": "2026-11-25"
+      },
+      "C5": {
+        "points": 10,
+        "evidence": "Grievance Officer email listed on the government's GAC list.",
+        "source": "https://gac.gov.in/Home/getSSMIOfficerList",
+        "checked": "2026-11-25"
+      },
+      "C6": {
+        "points": null,
+        "evidence": "Not assessed: visible AI labelling under the 2026 rules has not been checked yet.",
+        "source": null,
+        "checked": null
+      },
+      "C7": {
+        "points": null,
+        "evidence": "Not assessed: no NCII-specific transparency source checked yet.",
+        "source": null,
+        "checked": null
+      },
+      "C8": {
+        "points": 10,
+        "evidence": "One documented failure: a June 2026 Indian government (MHA) report reviewed by Reuters flagged Telegram channels reported for online harassment and child sexual abuse content. The June 2026 nationwide block was about exam leaks and is not counted. 15 - 5 = 10.",
+        "source": "https://www.thestar.com.my/tech/tech-news/2026/06/23/india-039proactively-monitoring039-telegram-over-concerns-about-illegal-content-government-report-shows",
+        "checked": "2026-11-25"
+      }
+    }
+  },
+  {
+    "platform": "x",
+    "reviewed": "2026-11-25",
+    "criteria": {
+      "C1": {
+        "points": 15,
+        "evidence": "Policy (August 2026) covers AI-generated, deepfake or digitally manipulated intimate media, and bans prompting AI to create it.",
+        "source": "https://help.x.com/en/rules-and-policies/intimate-media",
+        "checked": "2026-11-25"
+      },
+      "C2": {
+        "points": 8,
+        "evidence": "In-app report option for non-consensual intimate content plus a private information web form. The page doesn't say whether an account is needed, so scored as a lower bound.",
+        "source": "https://help.x.com/en/rules-and-policies/intimate-media",
+        "checked": "2026-11-25"
+      },
+      "C3": {
+        "points": 10,
+        "evidence": "X's help page lists 4 in-app steps.",
+        "source": "https://help.x.com/en/rules-and-policies/intimate-media",
+        "checked": "2026-11-25"
+      },
+      "C4": {
+        "points": 15,
+        "evidence": "Linked as an industry partner on the StopNCII partners page.",
+        "source": "https://stopncii.org/partners/industry-partners/",
+        "checked": "2026-11-25"
+      },
+      "C5": {
+        "points": 10,
+        "evidence": "Grievance Officer reachable by form (not email), listed on the GAC list and X's India page.",
+        "source": "https://help.x.com/en/rules-and-policies/x-india",
+        "checked": "2026-11-25"
+      },
+      "C6": {
+        "points": null,
+        "evidence": "Not assessed: visible AI labelling under the 2026 rules has not been checked yet.",
+        "source": null,
+        "checked": null
+      },
+      "C7": {
+        "points": null,
+        "evidence": "Not assessed: no NCII-specific transparency source checked yet.",
+        "source": null,
+        "checked": null
+      },
+      "C8": {
+        "points": 0,
+        "evidence": "Three documented failures: MeitY notice over Grok 'undressing' images (Jan 2026); Ofcom formal investigation under the UK Online Safety Act (opened 12 Jan 2026); ISD found X drove users to nudify apps (Dec 2025 to Mar 2026). 15 - 15 = 0.",
+        "source": "https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/ofcom-launches-investigation-into-x-over-grok-sexualised-imagery",
+        "checked": "2026-11-25"
+      }
+    }
+  },
+  {
+    "platform": "reddit",
+    "reviewed": "2026-11-25",
+    "criteria": {
+      "C1": {
+        "points": 15,
+        "evidence": "Rule 3 covers intimate media 'including depictions that may have been AI-generated or faked'.",
+        "source": "https://support.reddithelp.com/hc/en-us/articles/360043513411-Never-Post-Intimate-or-Sexually-Explicit-Media-of-Someone-Without-Their-Consent",
+        "checked": "2026-11-25"
+      },
+      "C2": {
+        "points": 8,
+        "evidence": "Dedicated 'Non-consensual intimate media' report reason on app and website, plus a linked reporting page. Account access not confirmed, so scored as a lower bound.",
+        "source": "https://support.reddithelp.com/hc/en-us/articles/360043513411-Never-Post-Intimate-or-Sexually-Explicit-Media-of-Someone-Without-Their-Consent",
+        "checked": "2026-11-25"
+      },
+      "C3": {
+        "points": null,
+        "evidence": "Not assessed: needs a hands-on walkthrough or published step list.",
+        "source": null,
+        "checked": null
+      },
+      "C4": {
+        "points": 15,
+        "evidence": "Linked as an industry partner on the StopNCII partners page.",
+        "source": "https://stopncii.org/partners/industry-partners/",
+        "checked": "2026-11-25"
+      },
+      "C5": {
+        "points": null,
+        "evidence": "Not assessed: Reddit's India Grievance Officer route not found on an official page yet.",
+        "source": null,
+        "checked": null
+      },
+      "C6": {
+        "points": null,
+        "evidence": "Not assessed: visible AI labelling under the 2026 rules has not been checked yet.",
+        "source": null,
+        "checked": null
+      },
+      "C7": {
+        "points": 10,
+        "evidence": "Transparency reports publish removal counts for non-consensual intimate media (about 174,000 posts and comments removed in 2022).",
+        "source": "https://www.redditinc.com/policies/2022-transparency-report",
+        "checked": "2026-11-25"
+      },
+      "C8": {
+        "points": 10,
+        "evidence": "One documented failure: ISD's July 2026 report found Reddit among the main sources of traffic to nudify tools. 15 - 5 = 10.",
+        "source": "https://www.isdglobal.org/wp-content/uploads/2026/08/Mapping-the-Nudify-Tools-Ecosystem.pdf",
+        "checked": "2026-11-25"
+      }
+    }
+  },
+  {
+    "platform": "youtube",
+    "reviewed": "2026-11-25",
+    "criteria": {
+      "C1": {
+        "points": 15,
+        "evidence": "Privacy guidelines let people ask for removal of AI-altered or synthetic content that looks or sounds like them.",
+        "source": "https://support.google.com/youtube/answer/7671399",
+        "checked": "2026-11-25"
+      },
+      "C2": {
+        "points": 8,
+        "evidence": "In-app report plus a dedicated privacy complaint form for AI-altered content. Account access not confirmed, so scored as a lower bound.",
+        "source": "https://support.google.com/youtube/contact/YT_privacy_AI_complaint",
+        "checked": "2026-11-25"
+      },
+      "C3": {
+        "points": null,
+        "evidence": "Not assessed: needs a hands-on walkthrough or published step list.",
+        "source": null,
+        "checked": null
+      },
+      "C4": {
+        "points": 0,
+        "evidence": "Not on the StopNCII partners page (Google's Sept 2025 announcement covers Search).",
+        "source": "https://stopncii.org/partners/industry-partners/",
+        "checked": "2026-11-25"
+      },
+      "C5": {
+        "points": 10,
+        "evidence": "Grievance Officer email listed on the government's GAC list.",
+        "source": "https://gac.gov.in/Home/getSSMIOfficerList",
+        "checked": "2026-11-25"
+      },
+      "C6": {
+        "points": null,
+        "evidence": "Not assessed: visible AI labelling under the 2026 rules has not been checked yet.",
+        "source": null,
+        "checked": null
+      },
+      "C7": {
+        "points": null,
+        "evidence": "Not assessed: no NCII-specific transparency source checked yet.",
+        "source": null,
+        "checked": null
+      },
+      "C8": {
+        "points": 10,
+        "evidence": "One documented failure: ISD found YouTube was the largest single source of traffic to nudify apps between Dec 2025 and Mar 2026. 15 - 5 = 10.",
+        "source": "https://oecd.ai/en/incidents/2026-07-14-a0d6",
+        "checked": "2026-11-25"
+      }
+    }
+  },
+  {
+    "platform": "google-search",
+    "reviewed": "2026-11-25",
+    "criteria": {
+      "C1": {
+        "points": 15,
+        "evidence": "Google's NCII policy covers fake, AI-generated or synthetic imagery.",
+        "source": "https://support.google.com/accounts/answer/17045517?hl=en",
+        "checked": "2026-11-25"
+      },
+      "C2": {
+        "points": 8,
+        "evidence": "Dedicated 'It shows a sexual image of me' option in results plus an NCII removal form. Account access not confirmed, so scored as a lower bound.",
+        "source": "https://blog.google/products-and-platforms/products/search/remove-explicit-images/",
+        "checked": "2026-11-25"
+      },
+      "C3": {
+        "points": 10,
+        "evidence": "Google's Feb 2026 post describes a 4-step flow from the search result.",
+        "source": "https://blog.google/products-and-platforms/products/search/remove-explicit-images/",
+        "checked": "2026-11-25"
+      },
+      "C4": {
+        "points": 10,
+        "evidence": "Partnership with StopNCII announced Sept 2025; not yet shown on the partners page.",
+        "source": "https://blog.google/products/search/stopncii-program-partnership/",
+        "checked": "2026-11-25"
+      },
+      "C5": {
+        "points": 10,
+        "evidence": "Grievance Mechanism for India page published.",
+        "source": "https://www.google.co.in/intl/en/contact/grievance-officer.html",
+        "checked": "2026-11-25"
+      },
+      "C6": {
+        "points": null,
+        "evidence": "Not assessed: visible AI labelling under the 2026 rules has not been checked yet.",
+        "source": null,
+        "checked": null
+      },
+      "C7": {
+        "points": null,
+        "evidence": "Not assessed: no NCII-specific transparency source checked yet.",
+        "source": null,
+        "checked": null
+      },
+      "C8": {
+        "points": null,
+        "evidence": "Not assessed: a government notice to Google about nudify sites in Brazil was found, but its date was not confirmed.",
+        "source": null,
+        "checked": null
+      }
+    }
+  }
+]

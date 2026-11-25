@@ -1,0 +1,98 @@
+[
+  {
+    "id": "C1",
+    "max": 15,
+    "name": {
+      "en": "Policy covers AI-made and morphed content",
+      "hi": "नीति में एआई से बनी और मॉर्फ़्ड सामग्री शामिल"
+    },
+    "how": {
+      "en": "15 if the NCII policy explicitly covers AI-made or morphed content, 8 if only implied by a general nudity or pornography rule, 0 if none.",
+      "hi": "15 अगर एनसीआईआई नीति में एआई या मॉर्फ़्ड सामग्री साफ़ लिखी है, 8 अगर केवल सामान्य नग्नता या अश्लीलता नियम से समझ आती है, 0 अगर कुछ नहीं।"
+    }
+  },
+  {
+    "id": "C2",
+    "max": 15,
+    "name": {
+      "en": "Dedicated NCII reporting route",
+      "hi": "एनसीआईआई के लिए अलग रिपोर्टिंग रास्ता"
+    },
+    "how": {
+      "en": "15 for in-app plus a web form usable without an account. 8 for a dedicated in-app route (or a web form where account access is not confirmed). 3 for a generic report or email only.",
+      "hi": "15: इन-ऐप और बिना अकाउंट वाला वेब फ़ॉर्म। 8: अलग इन-ऐप रास्ता (या वेब फ़ॉर्म जहाँ बिना अकाउंट पहुँच की पुष्टि नहीं)। 3: केवल सामान्य रिपोर्ट या ईमेल।"
+    }
+  },
+  {
+    "id": "C3",
+    "max": 10,
+    "name": {
+      "en": "Ease of reporting",
+      "hi": "रिपोर्ट करना कितना आसान"
+    },
+    "how": {
+      "en": "Steps counted from the platform's own published instructions: up to 4 steps = 10, 5 to 7 = 6, 8 or more = 2. A hands-on walkthrough is on the roadmap.",
+      "hi": "प्लेटफ़ॉर्म के अपने प्रकाशित निर्देशों से गिने गए कदम: 4 तक = 10, 5 से 7 = 6, 8 या ज़्यादा = 2। ख़ुद करके जाँच रोडमैप में है।"
+    }
+  },
+  {
+    "id": "C4",
+    "max": 15,
+    "name": {
+      "en": "Hash-matching partnership (StopNCII)",
+      "hi": "हैश-मैचिंग साझेदारी (StopNCII)"
+    },
+    "how": {
+      "en": "Listed StopNCII partner = 15, announced partnership = 10, none = 0.",
+      "hi": "StopNCII की सूची में पार्टनर = 15, साझेदारी की घोषणा = 10, कुछ नहीं = 0।"
+    }
+  },
+  {
+    "id": "C5",
+    "max": 10,
+    "name": {
+      "en": "India Grievance Officer reachable",
+      "hi": "भारत शिकायत अधिकारी तक पहुँच"
+    },
+    "how": {
+      "en": "Published with a direct route (form or email) = 10, published but hard to reach = 5, not found = 0.",
+      "hi": "सीधे रास्ते (फ़ॉर्म या ईमेल) के साथ प्रकाशित = 10, प्रकाशित पर पहुँचना मुश्किल = 5, नहीं मिला = 0।"
+    }
+  },
+  {
+    "id": "C6",
+    "max": 10,
+    "name": {
+      "en": "AI content labelling (IT Rules 2026)",
+      "hi": "एआई सामग्री पर लेबल (आईटी नियम 2026)"
+    },
+    "how": {
+      "en": "Visible labels on AI content = 10, partial = 5, none = 0.",
+      "hi": "एआई सामग्री पर दिखने वाले लेबल = 10, आंशिक = 5, कुछ नहीं = 0।"
+    }
+  },
+  {
+    "id": "C7",
+    "max": 10,
+    "name": {
+      "en": "Transparency on NCII",
+      "hi": "एनसीआईआई पर पारदर्शिता"
+    },
+    "how": {
+      "en": "Publishes NCII removal numbers or response times = 10, general numbers only = 4, none = 0.",
+      "hi": "एनसीआईआई हटाने के आँकड़े या जवाब का समय प्रकाशित = 10, केवल सामान्य आँकड़े = 4, कुछ नहीं = 0।"
+    }
+  },
+  {
+    "id": "C8",
+    "max": 15,
+    "name": {
+      "en": "Incident record, last 12 months",
+      "hi": "पिछले 12 महीनों का रिकॉर्ड"
+    },
+    "how": {
+      "en": "Starts at 15. Minus 5 for each documented NCII-related failure from a credible source (regulator action or major investigation) in the last 12 months. Floor 0.",
+      "hi": "15 से शुरू। पिछले 12 महीनों में विश्वसनीय स्रोत (नियामक कार्रवाई या बड़ी जाँच) से दर्ज हर एनसीआईआई-संबंधी विफलता पर 5 कम। न्यूनतम 0।"
+    }
+  }
+]

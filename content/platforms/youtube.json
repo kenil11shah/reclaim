@@ -1,0 +1,65 @@
+{
+  "id": "youtube",
+  "name": "YouTube",
+  "category": "video",
+  "reach": 4,
+  "stopnciiPartner": "no",
+  "reportSteps": [
+    {
+      "en": "Under the video, tap the three dots, then Report.",
+      "hi": "वीडियो के नीचे तीन बिंदुओं पर टैप करें, फिर Report।"
+    },
+    {
+      "en": "Choose sexual content (or the closest option) and submit.",
+      "hi": "यौन सामग्री (या सबसे क़रीबी विकल्प) चुनें और सबमिट करें।"
+    },
+    {
+      "en": "If the video uses AI to show your face or body, also file a privacy complaint for altered or synthetic content.",
+      "hi": "अगर वीडियो में एआई से आपका चेहरा या शरीर दिखाया गया है, तो बदली हुई या सिंथेटिक सामग्री के लिए निजता शिकायत भी दर्ज करें।"
+    },
+    {
+      "en": "Describe how you appear in the video so YouTube can identify you. Your name is not shared with the uploader.",
+      "hi": "बताएँ कि आप वीडियो में कैसे दिखते हैं ताकि YouTube आपको पहचान सके। आपका नाम अपलोड करने वाले को नहीं बताया जाता।"
+    }
+  ],
+  "webForm": {
+    "url": "https://support.google.com/youtube/contact/YT_privacy_AI_complaint",
+    "label": {
+      "en": "Privacy complaint form for AI-altered or synthetic content",
+      "hi": "एआई से बदली या सिंथेटिक सामग्री के लिए निजता शिकायत फ़ॉर्म"
+    },
+    "needsAccount": "unknown"
+  },
+  "email": null,
+  "grievanceOfficer": {
+    "route": "email",
+    "value": "support-in@google.com",
+    "source": "https://gac.gov.in/Home/getSSMIOfficerList"
+  },
+  "policySummary": {
+    "en": "YouTube's privacy guidelines let you ask for removal of AI-altered or synthetic content that looks or sounds like you, if you are uniquely identifiable.",
+    "hi": "YouTube की निजता नीति आपको ऐसी एआई से बदली या सिंथेटिक सामग्री हटवाने देती है जो आपकी तरह दिखती या सुनाई देती है, अगर आपको पहचाना जा सकता है।"
+  },
+  "aiContentCovered": "yes",
+  "tips": [
+    {
+      "en": "YouTube gives the uploader a short window to remove it before review. Note the time you filed.",
+      "hi": "YouTube समीक्षा से पहले अपलोड करने वाले को हटाने का थोड़ा समय देता है। शिकायत का समय नोट करें।"
+    }
+  ],
+  "sources": [
+    {
+      "label": "YouTube Privacy Guidelines",
+      "url": "https://support.google.com/youtube/answer/7671399"
+    },
+    {
+      "label": "YouTube: privacy complaint for AI content",
+      "url": "https://support.google.com/youtube/contact/YT_privacy_AI_complaint"
+    },
+    {
+      "label": "GAC: list of Grievance Officers of significant social media intermediaries",
+      "url": "https://gac.gov.in/Home/getSSMIOfficerList"
+    }
+  ],
+  "lastVerified": "2026-11-25"
+}

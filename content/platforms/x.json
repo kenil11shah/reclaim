@@ -1,0 +1,69 @@
+{
+  "id": "x",
+  "name": "X",
+  "category": "social",
+  "reach": 2,
+  "stopnciiPartner": "listed",
+  "reportSteps": [
+    {
+      "en": "Tap the three dots on the post.",
+      "hi": "पोस्ट पर तीन बिंदुओं पर टैप करें।"
+    },
+    {
+      "en": "Tap Report and choose the option for unauthorized or non-consensual intimate content.",
+      "hi": "Report पर टैप करें और बिना अनुमति या बिना सहमति निजी सामग्री वाला विकल्प चुनें।"
+    },
+    {
+      "en": "Say whether you are reporting for yourself or someone else.",
+      "hi": "बताएँ कि आप अपने लिए रिपोर्ट कर रहे हैं या किसी और के लिए।"
+    },
+    {
+      "en": "Select up to 5 posts and submit.",
+      "hi": "5 तक पोस्ट चुनें और सबमिट करें।"
+    }
+  ],
+  "webForm": {
+    "url": "https://help.x.com/en/rules-and-policies/intimate-media",
+    "label": {
+      "en": "Private information report form (linked from X's policy page)",
+      "hi": "निजी जानकारी रिपोर्ट फ़ॉर्म (X के नीति पेज से जुड़ा)"
+    },
+    "needsAccount": "unknown"
+  },
+  "email": null,
+  "grievanceOfficer": {
+    "route": "form",
+    "value": "https://help.x.com/en/rules-and-policies/x-india",
+    "source": "https://help.x.com/en/rules-and-policies/x-india",
+    "note": {
+      "en": "X says its Grievance Officer cannot be contacted by email. Use the form.",
+      "hi": "X के अनुसार उसके शिकायत अधिकारी से ईमेल पर संपर्क नहीं हो सकता। फ़ॉर्म इस्तेमाल करें।"
+    }
+  },
+  "policySummary": {
+    "en": "X's policy (August 2026) bans AI-generated, deepfake or digitally manipulated intimate media of real people, and even prompting AI to create it.",
+    "hi": "X की नीति (अगस्त 2026) असली लोगों की एआई से बनी, डीपफ़ेक या डिजिटल रूप से बदली निजी सामग्री पर रोक लगाती है, और एआई से इसे बनाने के लिए कहने पर भी।"
+  },
+  "aiContentCovered": "yes",
+  "tips": [
+    {
+      "en": "Report the original post and each repost separately. You can add up to 5 posts in one report.",
+      "hi": "मूल पोस्ट और हर रीपोस्ट को अलग से रिपोर्ट करें। एक रिपोर्ट में 5 तक पोस्ट जोड़ सकते हैं।"
+    }
+  ],
+  "sources": [
+    {
+      "label": "X: Non-consensual nudity policy",
+      "url": "https://help.x.com/en/rules-and-policies/intimate-media"
+    },
+    {
+      "label": "X India: Grievance Officer",
+      "url": "https://help.x.com/en/rules-and-policies/x-india"
+    },
+    {
+      "label": "StopNCII industry partners",
+      "url": "https://stopncii.org/partners/industry-partners/"
+    }
+  ],
+  "lastVerified": "2026-11-25"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "instagram",
+  "name": "Instagram",
+  "category": "social",
+  "reach": 1,
+  "stopnciiPartner": "listed",
+  "reportSteps": [
+    {
+      "en": "Open the post, reel, story, comment or profile.",
+      "hi": "पोस्ट, रील, स्टोरी, कमेंट या प्रोफ़ाइल खोलें।"
+    },
+    {
+      "en": "Tap the three dots (⋯).",
+      "hi": "तीन बिंदुओं (⋯) पर टैप करें।"
+    },
+    {
+      "en": "Tap Report.",
+      "hi": "Report पर टैप करें।"
+    },
+    {
+      "en": "Choose the option for nudity, sexual content or sharing private images. Meta says it has a dedicated option for private images.",
+      "hi": "नग्नता, यौन सामग्री या निजी तस्वीरें साझा करने वाला विकल्प चुनें। Meta के अनुसार निजी तस्वीरों के लिए अलग विकल्प है।"
+    },
+    {
+      "en": "Say whether the image is of you or someone else, then submit.",
+      "hi": "बताएँ कि तस्वीर आपकी है या किसी और की, फिर सबमिट करें।"
+    },
+    {
+      "en": "Screenshot the confirmation and note the time in your evidence log.",
+      "hi": "पुष्टि का स्क्रीनशॉट लें और समय अपने सबूत लॉग में लिखें।"
+    }
+  ],
+  "webForm": {
+    "url": null,
+    "label": {
+      "en": "Use in-app reporting. For proactive blocking, use StopNCII.org.",
+      "hi": "इन-ऐप रिपोर्टिंग इस्तेमाल करें। पहले से ब्लॉक करने के लिए StopNCII.org इस्तेमाल करें।"
+    },
+    "needsAccount": "unknown"
+  },
+  "email": null,
+  "grievanceOfficer": {
+    "route": "form",
+    "value": "https://help.meta.com/requests/1371776380779082/",
+    "source": "https://gac.gov.in/Home/getSSMIOfficerList"
+  },
+  "policySummary": {
+    "en": "Meta bans sharing or threatening to share intimate images without consent, whether real or AI-generated. Facebook and Instagram share the same rules.",
+    "hi": "Meta बिना सहमति निजी तस्वीरें साझा करने या साझा करने की धमकी देने पर रोक लगाता है, चाहे वे असली हों या एआई से बनी। Facebook और Instagram के नियम एक जैसे हैं।"
+  },
+  "aiContentCovered": "yes",
+  "tips": [
+    {
+      "en": "StopNCII.org works here: Meta is a partner, so a hash from your device can stop re-uploads.",
+      "hi": "यहाँ StopNCII.org काम करता है: Meta पार्टनर है, इसलिए आपके डिवाइस से बना हैश दोबारा अपलोड रोक सकता है।"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Meta: Combating sextortion and intimate image abuse",
+      "url": "https://www.meta.com/en-gb/safety/topics/bullying-harassment/ncii/"
+    },
+    {
+      "label": "Meta: Taking action against nudify apps (June 2025)",
+      "url": "https://about.fb.com/news/2025/06/taking-action-against-nudify-apps/"
+    },
+    {
+      "label": "GAC: list of Grievance Officers of significant social media intermediaries",
+      "url": "https://gac.gov.in/Home/getSSMIOfficerList"
+    },
+    {
+      "label": "StopNCII industry partners",
+      "url": "https://stopncii.org/partners/industry-partners/"
+    }
+  ],
+  "lastVerified": "2026-11-25"
+}

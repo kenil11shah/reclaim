@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Calm, trauma-informed palette: warm paper ground, deep plum ink, one violet brand,
+  amber only for deadlines, teal only for "removed". No graphic imagery anywhere.
+*/
+:root {
+  --bg: 251 248 244;
+  --surface: 255 255 255;
+  --ink: 31 27 46;
+  --muted: 92 86 110;
+  --line: 228 222 215;
+  --brand: 76 58 150;
+  --brand-soft: 236 232 248;
+  --on-brand: 255 255 255;
+  --amber: 214 140 30;
+  --amber-soft: 252 238 214;
+  --ok: 30 120 104;
+  --ok-soft: 223 242 236;
+  --danger: 176 58 46;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: 22 20 31;
+    --surface: 32 29 44;
+    --ink: 240 236 247;
+    --muted: 176 169 194;
+    --line: 60 55 78;
+    --brand: 177 160 245;
+    --brand-soft: 52 45 84;
+    --on-brand: 22 18 40;
+    --amber: 240 176 80;
+    --amber-soft: 66 48 18;
+    --ok: 110 205 182;
+    --ok-soft: 24 58 52;
+    --danger: 240 128 112;
+    color-scheme: dark;
+  }
+}
+
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 80px; }
+body { font-feature-settings: 'cv11', 'ss01'; overflow-x: clip; }
+[lang='hi'] body, [lang='hi'] { line-height: 1.65; }
+*:focus-visible { outline: 3px solid rgb(var(--brand)); outline-offset: 2px; border-radius: 6px; }
+::selection { background: rgb(var(--brand) / 0.2); }
+
+.tour-highlight {
+  outline: 3px solid rgb(var(--amber));
+  outline-offset: 6px;
+  border-radius: 16px;
+  scroll-margin: 120px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tour-highlight { animation: tour-pulse 1.8s ease-in-out 2; }
+  @keyframes tour-pulse { 50% { outline-offset: 10px; } }
+}
+
+.prose-reclaim { max-width: 68ch; font-size: 17px; line-height: 1.7; }
+.prose-reclaim h2 { font-size: 22px; font-weight: 700; margin: 2rem 0 0.6rem; line-height: 1.25; }
+.prose-reclaim h3 { font-size: 18px; font-weight: 700; margin: 1.5rem 0 0.4rem; }
+.prose-reclaim p { margin: 0.8rem 0; }
+.prose-reclaim ul, .prose-reclaim ol { margin: 0.8rem 0; padding-left: 1.4rem; }
+.prose-reclaim ul { list-style: disc; }
+.prose-reclaim ol { list-style: decimal; }
+.prose-reclaim li { margin: 0.35rem 0; }
+.prose-reclaim a { color: rgb(var(--brand)); text-decoration: underline; text-underline-offset: 3px; }
+.prose-reclaim strong { font-weight: 700; }
+.prose-reclaim table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 1rem 0; }
+.prose-reclaim th, .prose-reclaim td { border-bottom: 1px solid rgb(var(--line)); padding: 8px 6px; text-align: left; vertical-align: top; }
+
+@media print {
+  header, footer, [data-testid='tour'], [data-testid='demo-banner'], .no-print { display: none !important; }
+  main { padding: 0 !important; }
+  body { background: white; color: black; }
+  .print-only { display: block !important; }
+}
+.print-only { display: none; }

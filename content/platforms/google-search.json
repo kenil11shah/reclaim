@@ -1,0 +1,77 @@
+{
+  "id": "google-search",
+  "name": "Google Search",
+  "category": "search",
+  "reach": 8,
+  "stopnciiPartner": "announced",
+  "reportSteps": [
+    {
+      "en": "In Google Search results, tap the three dots next to the image.",
+      "hi": "Google सर्च नतीजों में तस्वीर के पास तीन बिंदुओं पर टैप करें।"
+    },
+    {
+      "en": "Tap 'Remove result'.",
+      "hi": "'Remove result' पर टैप करें।"
+    },
+    {
+      "en": "Choose 'It shows a sexual image of me'.",
+      "hi": "'It shows a sexual image of me' चुनें।"
+    },
+    {
+      "en": "Select several images at once if needed, then submit.",
+      "hi": "ज़रूरत हो तो कई तस्वीरें एक साथ चुनें, फिर सबमिट करें।"
+    },
+    {
+      "en": "Optional: turn on safeguards that filter similar explicit results in future.",
+      "hi": "वैकल्पिक: ऐसे सुरक्षा उपाय चालू करें जो आगे मिलते-जुलते अश्लील नतीजे छाँट दें।"
+    },
+    {
+      "en": "Track your requests in 'Results about you'.",
+      "hi": "अपने अनुरोध 'Results about you' में देखें।"
+    }
+  ],
+  "webForm": {
+    "url": "https://support.google.com/websearch/contact/content_removal_form",
+    "label": {
+      "en": "Google content removal form for NCII",
+      "hi": "एनसीआईआई के लिए Google सामग्री हटाने का फ़ॉर्म"
+    },
+    "needsAccount": "unknown"
+  },
+  "email": null,
+  "grievanceOfficer": {
+    "route": "form",
+    "value": "https://www.google.co.in/intl/en/contact/grievance-officer.html",
+    "source": "https://www.google.co.in/intl/en/contact/grievance-officer.html"
+  },
+  "policySummary": {
+    "en": "Google's NCII policy covers real and AI-generated or synthetic intimate imagery. Removing a result hides it from Search; it does not delete it from the website.",
+    "hi": "Google की एनसीआईआई नीति असली और एआई से बनी या सिंथेटिक निजी तस्वीरों को कवर करती है। नतीजा हटाने से वह सर्च से छिपता है; वेबसाइट से नहीं मिटता।"
+  },
+  "aiContentCovered": "yes",
+  "tips": [
+    {
+      "en": "Do this after reporting to the website itself, so the content disappears from both places.",
+      "hi": "यह वेबसाइट को रिपोर्ट करने के बाद करें, ताकि सामग्री दोनों जगह से हट जाए।"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Google Help: Remove explicit or intimate content",
+      "url": "https://support.google.com/accounts/answer/17045517?hl=en"
+    },
+    {
+      "label": "Google: simpler removal flow (Feb 2026)",
+      "url": "https://blog.google/products-and-platforms/products/search/remove-explicit-images/"
+    },
+    {
+      "label": "Google and StopNCII (Sept 2025)",
+      "url": "https://blog.google/products/search/stopncii-program-partnership/"
+    },
+    {
+      "label": "Google Grievance Mechanism for India",
+      "url": "https://www.google.co.in/intl/en/contact/grievance-officer.html"
+    }
+  ],
+  "lastVerified": "2026-11-25"
+}

@@ -1,0 +1,156 @@
+[
+  {
+    "id": "it-rules-3-2-b",
+    "short": "IT Rules 2021, Rule 3(2)(b)",
+    "name": {"en": "IT Rules 2021, Rule 3(2)(b), as amended in February 2026", "hi": "आईटी नियम 2021, नियम 3(2)(b), फ़रवरी 2026 संशोधन सहित"},
+    "summary": {"en": "When you complain that content shows you nude, in a sexual act, or is an artificially morphed image of you, the platform must remove it or block access within 2 hours. Before February 2026 the limit was 24 hours.", "hi": "अगर आप शिकायत करते हैं कि किसी सामग्री में आपको नग्न, यौन कृत्य में या आपकी कृत्रिम रूप से बदली (मॉर्फ़्ड) तस्वीर दिखाई गई है, तो प्लेटफ़ॉर्म को उसे 2 घंटे के अंदर हटाना या ब्लॉक करना होगा। फ़रवरी 2026 से पहले यह सीमा 24 घंटे थी।"},
+    "penalty": {"en": "Duty on platforms: remove within 2 hours of your complaint.", "hi": "प्लेटफ़ॉर्म की ज़िम्मेदारी: आपकी शिकायत के 2 घंटे के अंदर हटाना।"},
+    "appliesTo": ["real", "fake", "filmed"],
+    "sourceLabel": "Freshfields: India's 2026 IT Rules amendments",
+    "sourceUrl": "https://www.freshfields.com/en/our-thinking/blogs/technology-quotient/india-targets-deepfakes-and-ai-generated-content-key-changes-under-meitys-2026-102mjwn",
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "it-rules-2026-sgi",
+    "short": "IT Rules amendment 2026",
+    "name": {"en": "IT Rules amendment 2026 (in force 20 February 2026)", "hi": "आईटी नियम संशोधन 2026 (20 फ़रवरी 2026 से लागू)"},
+    "summary": {"en": "AI-made ('synthetically generated') content must carry a clear, prominent label and, where possible, permanent metadata. Platforms must act on court or government takedown orders within 3 hours (was 36). Grievances about content concerning an individual must be resolved within 36 hours (was 72).", "hi": "एआई से बनी ('सिंथेटिक') सामग्री पर साफ़ और प्रमुख लेबल होना चाहिए और जहाँ संभव हो, स्थायी मेटाडेटा भी। अदालत या सरकार के हटाने के आदेश पर प्लेटफ़ॉर्म को 3 घंटे में कार्रवाई करनी होगी (पहले 36)। किसी व्यक्ति से जुड़ी सामग्री की शिकायत 36 घंटे में सुलझानी होगी (पहले 72)।"},
+    "penalty": {"en": "Duties on platforms: labels, 3-hour orders, 36-hour grievances.", "hi": "प्लेटफ़ॉर्म की ज़िम्मेदारियाँ: लेबल, 3 घंटे में आदेश पालन, 36 घंटे में शिकायत निपटारा।"},
+    "appliesTo": ["fake"],
+    "sourceLabel": "Freshfields: India's 2026 IT Rules amendments",
+    "sourceUrl": "https://www.freshfields.com/en/our-thinking/blogs/technology-quotient/india-targets-deepfakes-and-ai-generated-content-key-changes-under-meitys-2026-102mjwn",
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "meity-ncii-sop",
+    "short": "MeitY NCII SOP (Nov 2025)",
+    "name": {"en": "MeitY Standard Operating Procedure on NCII (11 November 2025)", "hi": "एनसीआईआई पर MeitY की मानक संचालन प्रक्रिया (11 नवंबर 2025)"},
+    "summary": {"en": "Lists the official ways to report: the National Cybercrime Reporting Portal (cybercrime.gov.in) or 1930, One Stop Centres, the platform's in-app reporting or Grievance Officer, and local police. Large platforms must use hash-matching and crawlers to stop re-uploads, and I4C keeps a secure NCII hash bank. The SOP set 24 hours; the February 2026 amendment cut this to 2 hours.", "hi": "रिपोर्ट करने के आधिकारिक रास्ते बताती है: नेशनल साइबरक्राइम रिपोर्टिंग पोर्टल (cybercrime.gov.in) या 1930, वन स्टॉप सेंटर, प्लेटफ़ॉर्म की इन-ऐप रिपोर्टिंग या शिकायत अधिकारी, और स्थानीय पुलिस। बड़े प्लेटफ़ॉर्म को दोबारा अपलोड रोकने के लिए हैश-मैचिंग और क्रॉलर इस्तेमाल करने होंगे, और I4C एक सुरक्षित एनसीआईआई हैश बैंक रखता है। SOP में 24 घंटे थे; फ़रवरी 2026 संशोधन ने इसे 2 घंटे कर दिया।"},
+    "penalty": {"en": "Government procedure; reporting routes and platform duties.", "hi": "सरकारी प्रक्रिया; रिपोर्टिंग के रास्ते और प्लेटफ़ॉर्म की ज़िम्मेदारियाँ।"},
+    "appliesTo": ["real", "fake", "filmed", "threat"],
+    "sourceLabel": "PIB release on the MeitY NCII SOP",
+    "sourceUrl": "https://negd.gov.in/wp-content/uploads/2025/11/Press-Release_Press-Information-Bureau2-1.pdf",
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "it-66e",
+    "short": "IT Act s. 66E",
+    "name": {"en": "IT Act 2000, Section 66E (violation of privacy)", "hi": "आईटी एक्ट 2000, धारा 66E (निजता का उल्लंघन)"},
+    "summary": {"en": "Capturing, publishing or sending an image of a person's private area without their consent.", "hi": "किसी व्यक्ति के निजी अंगों की तस्वीर बिना सहमति के लेना, प्रकाशित करना या भेजना।"},
+    "penalty": {"en": "Up to 3 years in prison, or a fine up to Rs 2 lakh, or both.", "hi": "3 साल तक की जेल, या 2 लाख रुपये तक का जुर्माना, या दोनों।"},
+    "appliesTo": ["real", "filmed"],
+    "sourceLabel": "Lok Sabha answer on IT Act penalties",
+    "sourceUrl": "https://eparlib.nic.in/bitstream/123456789/2979153/1/AS226_y8fPvt.pdf",
+    "lastVerified": "2026-11-18"
+  },
+  {
+    "id": "it-67",
+    "short": "IT Act s. 67",
+    "name": {"en": "IT Act 2000, Section 67 (obscene material online)", "hi": "आईटी एक्ट 2000, धारा 67 (ऑनलाइन अश्लील सामग्री)"},
+    "summary": {"en": "Publishing or sending obscene material electronically.", "hi": "इलेक्ट्रॉनिक रूप से अश्लील सामग्री प्रकाशित करना या भेजना।"},
+    "penalty": {"en": "Up to 3 years and a fine up to Rs 5 lakh for a first conviction; up to 5 years and Rs 10 lakh after that.", "hi": "पहली बार 3 साल तक और 5 लाख रुपये तक जुर्माना; दोबारा 5 साल तक और 10 लाख रुपये तक।"},
+    "appliesTo": ["real", "fake", "filmed"],
+    "sourceLabel": "Lok Sabha answer on IT Act penalties",
+    "sourceUrl": "https://eparlib.nic.in/bitstream/123456789/2979153/1/AS226_y8fPvt.pdf",
+    "lastVerified": "2026-11-18"
+  },
+  {
+    "id": "it-67a",
+    "short": "IT Act s. 67A",
+    "name": {"en": "IT Act 2000, Section 67A (sexually explicit material online)", "hi": "आईटी एक्ट 2000, धारा 67A (ऑनलाइन यौन रूप से स्पष्ट सामग्री)"},
+    "summary": {"en": "Publishing or sending material that contains a sexually explicit act. This is the section most often used for morphed or AI-made sexual images.", "hi": "यौन रूप से स्पष्ट कृत्य वाली सामग्री प्रकाशित करना या भेजना। मॉर्फ़्ड या एआई से बनी यौन तस्वीरों के लिए अक्सर यही धारा लगती है।"},
+    "penalty": {"en": "Up to 5 years and a fine up to Rs 10 lakh; up to 7 years on a repeat conviction.", "hi": "5 साल तक और 10 लाख रुपये तक जुर्माना; दोबारा दोषी होने पर 7 साल तक।"},
+    "appliesTo": ["real", "fake", "filmed"],
+    "sourceLabel": "Income Tax Department: text of section 67A",
+    "sourceUrl": "https://www.incometaxindia.gov.in/w/section-67a-41",
+    "lastVerified": "2026-11-18"
+  },
+  {
+    "id": "bns-77",
+    "short": "BNS s. 77",
+    "name": {"en": "Bharatiya Nyaya Sanhita 2023, Section 77 (voyeurism; replaced IPC 354C)", "hi": "भारतीय न्याय संहिता 2023, धारा 77 (दृश्यरतिकता; IPC 354C की जगह)"},
+    "summary": {"en": "Watching or capturing images of a woman in a private act, and sharing images she agreed to be taken but not shared.", "hi": "किसी महिला को निजी कृत्य में देखना या उसकी तस्वीर लेना, और ऐसी तस्वीरें साझा करना जिन्हें लेने की सहमति थी पर साझा करने की नहीं।"},
+    "penalty": {"en": "1 to 3 years and a fine; 3 to 7 years on a repeat conviction.", "hi": "1 से 3 साल और जुर्माना; दोबारा दोषी होने पर 3 से 7 साल।"},
+    "appliesTo": ["real", "filmed"],
+    "sourceLabel": "BNS section 77 text",
+    "sourceUrl": "https://devgan.in/bns/section/77/",
+    "lastVerified": "2026-11-18"
+  },
+  {
+    "id": "bns-78",
+    "short": "BNS s. 78",
+    "name": {"en": "Bharatiya Nyaya Sanhita 2023, Section 78 (stalking; replaced IPC 354D)", "hi": "भारतीय न्याय संहिता 2023, धारा 78 (पीछा करना; IPC 354D की जगह)"},
+    "summary": {"en": "Repeatedly following or contacting a woman despite clear disinterest, or monitoring her use of the internet, email or other electronic communication.", "hi": "साफ़ मना करने के बावजूद किसी महिला का बार-बार पीछा करना या संपर्क करना, या उसके इंटरनेट, ईमेल या अन्य इलेक्ट्रॉनिक संचार पर नज़र रखना।"},
+    "penalty": {"en": "Up to 3 years and a fine; up to 5 years on a repeat conviction.", "hi": "3 साल तक और जुर्माना; दोबारा दोषी होने पर 5 साल तक।"},
+    "appliesTo": ["threat"],
+    "sourceLabel": "BNS section 78 text",
+    "sourceUrl": "https://devgan.in/bns/section/78/",
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "bns-351",
+    "short": "BNS s. 351",
+    "name": {"en": "Bharatiya Nyaya Sanhita 2023, Section 351 (criminal intimidation)", "hi": "भारतीय न्याय संहिता 2023, धारा 351 (आपराधिक धमकी)"},
+    "summary": {"en": "Threatening someone with harm to their reputation, person or property to make them do something. Threats to share intimate images usually fall here.", "hi": "किसी को उसकी प्रतिष्ठा, शरीर या संपत्ति को नुकसान की धमकी देकर कुछ करवाना। निजी तस्वीरें फैलाने की धमकी आम तौर पर इसी में आती है।"},
+    "penalty": {"en": "Up to 2 years, or a fine, or both; more for some serious threats.", "hi": "2 साल तक, या जुर्माना, या दोनों; कुछ गंभीर धमकियों में ज़्यादा।"},
+    "appliesTo": ["threat"],
+    "sourceLabel": "BNS chapter XIX text",
+    "sourceUrl": "https://devgan.in/bns/chapter_19.php",
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "bns-308",
+    "short": "BNS s. 308",
+    "name": {"en": "Bharatiya Nyaya Sanhita 2023, Section 308 (extortion)", "hi": "भारतीय न्याय संहिता 2023, धारा 308 (जबरन वसूली)"},
+    "summary": {"en": "Putting someone in fear of injury to make them hand over money or property. Covers demands for money in exchange for not sharing images, even if no money was paid.", "hi": "डर दिखाकर किसी से पैसे या संपत्ति लेना। तस्वीरें न फैलाने के बदले पैसे माँगना भी इसमें आता है, भले ही पैसे दिए न गए हों।"},
+    "penalty": {"en": "Up to 7 years, or a fine, or both, depending on the sub-section.", "hi": "उप-धारा के अनुसार 7 साल तक, या जुर्माना, या दोनों।"},
+    "appliesTo": ["threat"],
+    "sourceLabel": "LawSikho: section 308 BNS explained",
+    "sourceUrl": "https://lawsikho.com/blog/section-308-bns-extortion/",
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "bns-356",
+    "short": "BNS s. 356",
+    "name": {"en": "Bharatiya Nyaya Sanhita 2023, Section 356 (defamation)", "hi": "भारतीय न्याय संहिता 2023, धारा 356 (मानहानि)"},
+    "summary": {"en": "Publishing something false that harms a person's reputation. Can apply when fake images are spread with false claims about you.", "hi": "कोई झूठी बात प्रकाशित करना जिससे किसी की प्रतिष्ठा को नुकसान हो। जब नकली तस्वीरें आपके बारे में झूठे दावों के साथ फैलाई जाएँ, तब यह लागू हो सकती है।"},
+    "penalty": {"en": "Up to 2 years, or a fine, or both, or community service.", "hi": "2 साल तक, या जुर्माना, या दोनों, या सामुदायिक सेवा।"},
+    "appliesTo": ["fake"],
+    "sourceLabel": "BNS chapter XIX text",
+    "sourceUrl": "https://devgan.in/bns/chapter_19.php",
+    "lastVerified": "2026-11-25"
+  },
+  {
+    "id": "dpdp",
+    "short": "DPDP Act 2023",
+    "name": {"en": "Digital Personal Data Protection Act 2023 and Rules 2025", "hi": "डिजिटल व्यक्तिगत डेटा संरक्षण अधिनियम 2023 और नियम 2025"},
+    "summary": {"en": "Gives people rights over their personal data. The Rules were notified in November 2025 and most duties apply from May 2027. Reclaim follows its spirit by never collecting your data at all.", "hi": "लोगों को उनके व्यक्तिगत डेटा पर अधिकार देता है। नियम नवंबर 2025 में अधिसूचित हुए और ज़्यादातर ज़िम्मेदारियाँ मई 2027 से लागू होंगी। Reclaim आपका डेटा बिल्कुल न लेकर इसकी भावना का पालन करता है।"},
+    "penalty": {"en": "Applies to organisations that process personal data.", "hi": "व्यक्तिगत डेटा प्रोसेस करने वाली संस्थाओं पर लागू।"},
+    "appliesTo": [],
+    "sourceLabel": "PIB: DPDP Rules 2025",
+    "sourceUrl": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf",
+    "lastVerified": "2026-11-18"
+  },
+  {
+    "id": "pocso",
+    "short": "POCSO Act 2012",
+    "name": {"en": "Protection of Children from Sexual Offences (POCSO) Act 2012", "hi": "लैंगिक अपराधों से बालकों का संरक्षण (पॉक्सो) अधिनियम 2012"},
+    "summary": {"en": "Any sexual content involving a person under 18 is a separate, more serious offence. Reclaim sends these cases to official child-safety routes only.", "hi": "18 साल से कम उम्र के व्यक्ति से जुड़ी कोई भी यौन सामग्री अलग और ज़्यादा गंभीर अपराध है। Reclaim ऐसे मामलों को केवल आधिकारिक बाल-सुरक्षा रास्तों पर भेजता है।"},
+    "penalty": {"en": "Separate, stricter offences.", "hi": "अलग और ज़्यादा सख़्त अपराध।"},
+    "appliesTo": [],
+    "sourceLabel": "India Code: POCSO Act",
+    "sourceUrl": "https://www.indiacode.nic.in/handle/123456789/2079",
+    "lastVerified": "2026-11-18"
+  },
+  {
+    "id": "take-it-down-act",
+    "short": "US TAKE IT DOWN Act",
+    "name": {"en": "US TAKE IT DOWN Act (global context)", "hi": "अमेरिका का TAKE IT DOWN एक्ट (वैश्विक संदर्भ)"},
+    "summary": {"en": "In the United States, platforms must remove NCII, including AI forgeries, within 48 hours of a valid request. FTC enforcement began on 19 May 2026.", "hi": "अमेरिका में प्लेटफ़ॉर्म को वैध अनुरोध के 48 घंटे के अंदर एनसीआईआई, एआई से बनी नकली सामग्री सहित, हटानी होती है। FTC ने 19 मई 2026 से इसे लागू करना शुरू किया।"},
+    "penalty": {"en": "Civil penalties up to $53,088 per violation (US).", "hi": "हर उल्लंघन पर 53,088 डॉलर तक का दंड (अमेरिका)।"},
+    "appliesTo": [],
+    "sourceLabel": "FTC: TAKE IT DOWN Act enforcement",
+    "sourceUrl": "https://www.ftc.gov/news-events/news/press-releases/2026/05/ftc-begins-enforcing-take-it-down-act",
+    "lastVerified": "2026-11-18"
+  }
+]
